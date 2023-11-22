@@ -85,9 +85,9 @@
   transform: translateY(-50%);
   transition: transform calc(var(--d) * 2) var(--e);
 }
-
-/* Image-specific styling */
-.card:nth-child(1):before {
+/* 
+Image-specific styling */
+/* .card:nth-child(1):before {
   background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/412904668.jpg?k=6bb8083c20252bb52e9d5fe026150ff3f7b01949ba33bde8fb24759c176c1330&o=&hp=1');
 }
 
@@ -100,8 +100,8 @@
 }
 
 .card:nth-child(4):before {
-  background-image: url('https://cms.kawa-news.com/wp-content/uploads/2022/08/Irbid-ruins-ruines-jordan-Jordanie.jpg');
-}
+  background-image: url('https://cms.kawa-news.com/wp-content/uploads/2022/08/Irbid-ruins-ruines-jordan-Jordanie.jpg'); */
+/* } */
 
 .content {
   position: relative;
@@ -140,7 +140,7 @@
   letter-spacing: 0.025rem;
   text-transform: uppercase;
   color: black;
-  background-color: #F9B530;
+  background-color: #FE7A00;
   border: none;
 }
 
@@ -149,7 +149,7 @@
 }
 
 .btn:focus {
-  outline: 1px dashed yellow;
+  outline: 1px dashed #FE7A00;
   outline-offset: 3px;
 }
 

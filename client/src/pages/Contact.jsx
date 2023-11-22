@@ -1,16 +1,60 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
+import Swal from 'sweetalert2';
 
 const ContactUS = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+ 
+
+  const [contactData, setContactData] = useState({
+    first_name: '',
+    email: '',
+    question: ''
+   
+  });
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Send a POST request with the data to your API endpoint
+    axios.post(' http://localhost:3004/user', contactData)
+      .then((response) => {
+        // Handle the success response here
+        if (response.status === 201) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Event Created Successfully!',
+            text: 'Your event has been created successfully.',
+            timer: 3000,
+            iconColor: '#FE7A00',
+          });
+        }
+      })
+      .catch((error) => {
+        console.error('An error occurred while sending the message:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: 'An error occurred while creating the event.',
+        });
+      });
+  };
+
+
   return (
     <div className="sm:p-10 my-auto ">
-      <section className="mx-auto max-w-screen-xl md:rounded-md md:border md:shadow-lg border border-solid border-yellow-500 rounded-md p-4">
+      <section className="mx-auto max-w-screen-xl md:rounded-md md:border md:shadow-lg border border-solid border-orange-400 rounded-md p-4">
         <div className="grid grid-cols-4 text-gray-800 lg:grid-cols-3">
           <div className="col-span-4 bg-gray-50 px-8 py-10 text-gray-800 md:col-span-2 md:border-r md:px-10 md:py-12 lg:col-span-1">
-          <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#F9B530] md:mb-6 md:text-4xl">Contact </h2>
+          <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">Contact </h2>
             <ul>
               <li className="mb-6 flex items-start text-left">
                 <svg
-                  className="shrink-0 mr-6 text-2xl text-gray-500 hover:text-[#F9B530]"
+                  className="shrink-0 mr-6 text-2xl text-gray-500 hover:text-[#FE7A00]"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                   role="img"
@@ -36,7 +80,7 @@ const ContactUS = () => {
               </li>
               <li className="my-6 flex items-center text-left">
                 <svg
-                  className="shrink-0 mr-6 text-2xl text-gray-500 hover:text-[#F9B530]"
+                  className="shrink-0 mr-6 text-2xl text-gray-500 hover:text-[#FE7A00]"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                   role="img"
@@ -62,7 +106,7 @@ const ContactUS = () => {
               </li>
               <li className="my-6 flex items-center text-left">
                 <svg
-                  className="shrink-0 mr-6 text-2xl text-gray-500 hover:text-[#F9B530]"
+                  className="shrink-0 mr-6 text-2xl text-gray-500 hover:text-[#FE7A00]"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                   role="img"
@@ -86,24 +130,29 @@ const ContactUS = () => {
             </ul>
           </div>
           <div className="order-first col-span-4 max-w-screen-md px-8 py-10 md:order-last md:col-span-2 md:px-10 md:py-12">
-          <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#F9B530] md:mb-6 md:text-4xl">Get in touch </h2>
+          <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">Get in touch </h2>
             <p className="mt-2 mb-4 font-sans text-sm tracking-normal">
             Don't be shy to ask us a question.
             </p>
-            <form action="">
+            <form action="" onSubmit={handleSubmit}>
               <div className="md:col-gap-4 mb-5 grid md:grid-cols-2 ">
                 <input
                   className="col-span-1 w-full border-b py-3 text-sm outline-none focus:border-b-2 focus:border-black    "
                   type="text"
                   placeholder="Name"
                   name="name"
-                  
+                  value={contactData.first_name}
+                     onChange={(e) => setContactData({ ...contactData, first_name: e.target.value })}
+                     required
                 />
                 <input
                   className="col-span-1 w-full border-b py-3 text-sm outline-none focus:border-b-2 focus:border-black"
                   type="email"
                   placeholder="Email"
                   name="email"
+                  value={contactData.email}
+                     onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                     required
                 />
               </div>
               <textarea
@@ -111,10 +160,13 @@ const ContactUS = () => {
                 rows="6"
                 placeholder="Question"
                 name="question"
+                value={contactData.question}
+                     onChange={(e) => setContactData({ ...contactData, question: e.target.value })}
+                     required
               ></textarea>
               <button
                 type="submit"
-                className="group flex cursor-pointer items-center rounded-xl bg-[#F9B530] bg-none px-8 py-4 text-center font-semibold leading-tight text-white"
+                className="group flex cursor-pointer items-center rounded-xl bg-[#FE7A00] bg-none px-8 py-4 text-center font-semibold leading-tight text-white"
               >
                 Send
                 <svg

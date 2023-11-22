@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function CheckoutPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
 <div className="relative mx-auto w-full bg-white">
   <div className="grid min-h-screen grid-cols-10">
@@ -8,7 +12,7 @@ function CheckoutPage() {
       <div className="mx-auto w-full max-w-lg">
         <h1 className="relative text-2xl font-medium text-left text-gray-700 sm:text-3xl">
           Secure Checkout
-          <span className="mt-2 block h-1 w-10 bg-[#F9B530] sm:w-20" />
+          <span className="mt-2 block h-1 w-10 bg-[#FE7A00] sm:w-20" />
         </h1>
         <form action="" className="mt-10 text-left flex flex-col space-y-4">
           <div>
@@ -119,7 +123,7 @@ function CheckoutPage() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-teal-800 to-[#F9B530] opacity-95" />
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-teal-800 to-[#FE7A00] opacity-95" />
       </div>
       <div className="relative">
         <ul className="space-y-5">

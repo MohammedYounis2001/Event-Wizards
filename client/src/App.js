@@ -9,8 +9,11 @@ import About from "./pages/About";
 import ContactUs from "./pages/Contact";
 import Profile from "./Component/Users/Profile";
 import Events from "./pages/Event";
-
 import FlipCard from "./pages/Detail";
+import CategoryContent from "./pages/CategoryContent";
+import { Ticket } from "./Component/Website/Ticket";
+import NotFound from "./pages/NotFound";
+import Discripiton from "./Component/Website/Discripiton";
 
 
 function App() {
@@ -21,15 +24,19 @@ function App() {
         <div className="h-full">
           <Routes>
             <Route path="/" element={<Home />} />
-           <Route path="about" element={<About />} />
-          <Route path="profile" element={<Profile/>}/> 
+            <Route path="about" element={<About />} />
+            <Route path="profile" element={<Profile/>}/> 
             <Route path="contact" element={<ContactUs />} />
             <Route path="login" element={<LoginForm />} />
-            <Route path="create event" element={<FlipCard />} />
+            <Route path="create event" element={<Events />} />
             <Route path="payment" element={<CheckoutPage />} />
-           
-            {/* <Route path='/blog/:id' element={<BlogDetail/>}/> */}
+            <Route path="category/:category" element={<CategoryContent />} />
+            <Route path="blog/:id" element={<FlipCard/>}/>
+            <Route path="ticket" element={<Ticket />} />
+            <Route path="*" element={<NotFound />} />
+           {/* < Route path="discripiton" element={< Discripiton/>} /> */}
           </Routes>
+      
         </div>
         <Foot />
         

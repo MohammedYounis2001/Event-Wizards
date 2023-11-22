@@ -3,11 +3,11 @@ import React from "react";
 const Service = () => {
   return (
     <div className="mt-8 mb-10">
-        <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#F9B530] md:mb-6 md:text-4xl">Services</h2>
+        <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">Services</h2>
      
       <div class="container mx-auto max-w-5xl flex gap-12 flex-wrap items-start justify-center md:justify-between">
         <div class="grid gap-4 justify-items-center text-center md:flex-1">
-          <div class="text-white rounded-full border-8 border-[#F9B530] bg-[#F9B530] p-4 ">
+          <div class="text-white rounded-full border-8 border-[#FE7A00] bg-[#FE7A00] p-4 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -27,7 +27,7 @@ const Service = () => {
           <p>We provide accurate and comprehensive information about each event, such as date, time, and location</p>
         </div>
         <div class="grid gap-4 justify-items-center text-center md:flex-1">
-          <div class="text-white rounded-full border-8 border-[#F9B530] bg-[#F9B530] p-4 ">
+          <div class="text-white rounded-full border-8 border-[#FE7A00] bg-[#FE7A00] p-4 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -47,7 +47,7 @@ const Service = () => {
           <p>We provide an easy-to-use interface to organize and browse events based on various criteria, such as rating, location, and date</p>
         </div>
         <div class="grid gap-4 justify-items-center text-center md:flex-1">
-          <div class="text-white rounded-full border-8 border-[#F9B530] bg-[#F9B530] p-4 ">
+          <div class="text-white rounded-full border-8 border-[#FE7A00] bg-[#FE7A00] p-4 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

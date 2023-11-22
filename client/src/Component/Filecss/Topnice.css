@@ -20,7 +20,7 @@ a:hover {
   color: #c4c3ca;
 }
 .link:hover {
-  color: #F9B530;
+  color: #FE7A00;
 }
 .over-hide {
   overflow: hidden;
@@ -82,7 +82,7 @@ a:hover {
   position: absolute;
   content: '';
   z-index: -1;
-  background-color: #F9B530;
+  background-color: #FE7A00;
   width: 128px;
   height: 40px;
   display: block;
@@ -245,14 +245,14 @@ a:hover {
 }
 .link:hover {
   color: #102770;
-  background-color: #F9B530;
+  background-color: #FE7A00;
 }
 .card-back .link{
   background-color: #0c1c00;
 }
 .card-back .link:hover{
   color: #0c1c00;
-  background-color: #F9B530;
+  background-color: #FE7A00;
 }
 .img-wrap img{
   width: 100%;

@@ -30,9 +30,7 @@ const TeamSection = () => {
         <section className="py-14">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
             <div className="max-w-xl text-center mx-auto">
-    <h3 className="text-[#F9B530] text-3xl font-semibold sm:text-4xl">
-       our team
-    </h3>
+            <h3 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">Our Team </h3>
 
 </div>
 
@@ -49,17 +47,17 @@ const TeamSection = () => {
                                 </div>
                                 <div className="mt-4 sm:mt-0">
                                     <h4 className="text-lg text-gray-700 font-semibold">{item.name}</h4>
-                                    <p className="text-[#F9B530]">{item.title}</p>
+                                    <p className="text-[#FE7A00]">{item.title}</p>
                                     <p className="text-gray-600 mt-2 text-start">{item.desc}</p>
                                     <div className="mt-3 flex gap-4 text-gray-400">
                                         <a href={item.twitter}>
-                                            <FontAwesomeIcon icon={faTwitter} className="w-5 h-5 duration-150 hover:text-[#F9B530]" />
+                                            <FontAwesomeIcon icon={faTwitter} className="w-5 h-5 duration-150 hover:text-[#FE7A00]" />
                                         </a>
                                         <a href={item.github}>
-                                            <FontAwesomeIcon icon={faGithub} className="w-5 h-5 duration-150 hover:text-[#F9B530]" />
+                                            <FontAwesomeIcon icon={faGithub} className="w-5 h-5 duration-150 hover:text-[#FE7A00]" />
                                         </a>
                                         <a href={item.linkedin}>
-                                            <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5 duration-150 hover:text-[#F9B530]" />
+                                            <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5 duration-150 hover:text-[#FE7A00]" />
                                         </a>
                                     </div>
                                 </div>

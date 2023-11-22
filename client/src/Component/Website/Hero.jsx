@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -34,9 +35,10 @@ const Hero = () => {
                       <h5 className="text-2xl font-bold md:text-4xl my-3 text-start">
                       What are you waiting for, create an event                
                             </h5>
-                      <button className="bg-[#F9B530] rounded-full text-white my-3 px-10 py-2">
+                            <Link to="create event">
+                      <button className="bg-[#FE7A00] hover:bg-orange-600 rounded-full hover:text-white text-white my-3 px-10 py-2">
                       Create your event                 
-                           </button>
+                           </button></Link>
                     </div>
                   </div>
                 </div>
@@ -53,9 +55,10 @@ const Hero = () => {
                     <h3 className="text-white text-2xl font-bold md:text-4xl my-3">
                     If you don't bring anything new to the world, you are a blame for it. 
                     </h3>
-                    <button className="bg-[#F9B530] rounded-full text-white my-3 px-10 py-2">
+                    <Link to="create event">
+                     <button className="bg-[#FE7A00]  hover:bg-orange-600 hover:text-white  rounded-full text-white my-3 px-10 py-2">
                     Create your event 
-                    </button>
+                    </button></Link>
                   </div>
                 </div>
               </div>
@@ -75,9 +78,10 @@ const Hero = () => {
                       <h3 className="text-white text-lg md:text-2xl my-3">
                       Make the change with us to live an active life
                       </h3>
-                      <button className="bg-[#F9B530]  rounded-full text-white my-3 px-10 py-2">
+                      <Link to="create event">
+                      <button className="bg-[#FE7A00] text-white hover:bg-yellow-600 hover:text-white  rounded-full  my-3  px-10 py-2">
                       Create your event 
-                      </button>
+                      </button></Link>
                     </div>
                   </div>
                 </div>
@@ -103,7 +107,7 @@ const Hero = () => {
             <button
               type="button"
               className={`${
-                currentSlide !== 1 ? `text-white` : `text-black`
+                currentSlide !== 1 ? `text-[#FE7A00]` : `text-black`
               } absolute top-1/2 left-0 transform -translate-y-1/2 mx-6 p-2 md:p-4`}
               data-carousel-prev=""
               onClick={() =>
@@ -133,7 +137,7 @@ const Hero = () => {
             <button
               type="button"
               className={`${
-                currentSlide !== 1 ? `text-white` : `text-black`
+                currentSlide !== 1 ? `text-[#FE7A00]` : `text-black`
               } absolute top-1/2 right-0 transform -translate-y-1/2 mx-6 p-2 md:p-4`}
               data-carousel-next=""
               onClick={() =>

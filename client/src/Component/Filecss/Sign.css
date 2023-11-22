@@ -34,7 +34,7 @@ background-image: url('https://images.pexels.com/photos/2774556/pexels-photo-277
     /* background-image: linear-gradient(90deg, #e0b722, #ff4931); */
     display: inline-block;
     padding: 10px 30px;
-    border: 3px solid #F9B530;
+    border: 3px solid #FE7A00;
     border-radius: 50px;
     background-clip: padding-box;
     position: relative;
@@ -43,12 +43,12 @@ background-image: url('https://images.pexels.com/photos/2774556/pexels-photo-277
     transition: all .25s;
 }
 .veen button.dark{
-    border-color: #F9B530;
-    background: #F9B530;
+    border-color: #FE7A00;
+    background: #FE7A00;
 }
 .veen .move button.dark{
-    border-color: #F9B530;
-    background: #F9B530;
+    border-color: #FE7A00;
+    background: #FE7A00;
 }
 .veen .splits p{
     font-size: 18px;
@@ -65,7 +65,7 @@ background-image: url('https://images.pexels.com/photos/2774556/pexels-photo-277
     height: 120%;
     top: -10%;
     left: 5%;
-    border: 3px solid #F9B530;
+    border: 3px solid #fff;
     border-radius: 20px  ;
     background: #fff;
     box-shadow: 0 0 4px rgba(f,f,f,.14), 0 4px 8px rgba(f,f,f,.28);
@@ -132,13 +132,13 @@ margin-top: 25px;
 }
 .veen .wrapper input:focus{
     outline: none;
-    border-color: #F9B530;
+    border-color: #FE7A00;
 }
 .veen > .wrapper.move{
     left: 45%;
 }
 .veen > .wrapper.move input:focus{
-    border-color: #F9B530;
+    border-color: #FE7A00;
 }
 @media (max-width: 767px){
     .veen{
@@ -174,10 +174,10 @@ margin-top: 25px;
     }
     .splits button.active{
         opacity: 1;
-        background: #F9B530;
+        background: #FE7A00;
     }
     .splits.rgstr-btn button.active{
-        background: #F9B530;
+        background: #FE7A00;
     }
     .splits p{
         display: none;

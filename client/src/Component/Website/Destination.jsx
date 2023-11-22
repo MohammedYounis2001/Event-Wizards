@@ -12,6 +12,9 @@ export default function Destination() {
       <div className="container">
         <div className="row full-height justify-content-center">
           <div className="col-12 text-center align-self-center py-5">
+          <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">
+          Always Event
+        </h2>
             <div className="section text-center py-5 py-md-0">
               <input
                 className="pricing"

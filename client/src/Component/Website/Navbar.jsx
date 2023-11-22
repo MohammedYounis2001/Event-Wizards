@@ -42,7 +42,7 @@ function Navbar() {
               <li>
                 <Link
                   to ="/"
-                  class="block py-2 pl-3 pr-4 text-white bg-[#FE7A00] rounded md:bg-transparent md:hover:text-[#F9B530] md:dark:hover:text-[#F9B530] md:p-0 dark:text-[#F9B530] "
+                  class="block py-2 pl-3 pr-4 text-white bg-[#FE7A00] rounded md:bg-transparent md:hover:text-[#FE7A00] md:dark:hover:text-[#FE7A00] md:p-0 dark:text-[#FE7A00] "
                   aria-current="page"
                 >
                   Home
@@ -50,41 +50,43 @@ function Navbar() {
               </li>
               <li>
                 <Link
-                  to ="about"
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#F9B530] md:p-0 dark:text-[#000] md:dark:hover:text-[#F9B530] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
                  to ="create event"
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#F9B530] md:p-0 dark:text-[#000] md:dark:hover:text-[#F9B530] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#FE7A00] md:p-0 dark:text-[#000] md:dark:hover:text-[#FE7A00] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Service
                 </Link>
               </li>
               <li>
                 <Link
-                 to ="contact"
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#F9B530] md:p-0 dark:text-[#000] md:dark:hover:text-[#F9B530] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
                   to ="profile"
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#F9B530] md:p-0 dark:text-[#000] md:dark:hover:text-[#F9B530] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#FE7A00] md:p-0 dark:text-[#000] md:dark:hover:text-[#FE7A00] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link
+                  to ="about"
+                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#FE7A00] md:p-0 dark:text-[#000] md:dark:hover:text-[#FE7A00] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  About
+                </Link>
+              </li>
+              
+              <li>
+                <Link
+                 to ="contact"
+                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#FE7A00] md:p-0 dark:text-[#000] md:dark:hover:text-[#FE7A00] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Contact
+                </Link>
+              </li>
+              
             </ul>
           </div>
 
           <Link to ="login">
-          <button className="bg-[#F9B530] rounded-full text-white h-10  my-3 px-4">
+          <button className="bg-[#FE7A00] rounded-full text-white h-10  my-3 px-4">
                   Signin/Signup
                 </button></Link>
         </div>
