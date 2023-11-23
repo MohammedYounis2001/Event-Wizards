@@ -27,6 +27,13 @@
 .App-link {
   color: #61dafb;
 }
+.ReactModal__Content {
+  background: none !important;
+  border: none !important;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(50%, 50%); */
+}
 
 @keyframes App-logo-spin {
   from {

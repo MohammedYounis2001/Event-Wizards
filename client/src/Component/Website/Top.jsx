@@ -9,7 +9,7 @@ function Top() {
   // fetch products
   useEffect(() => {
     axios
-      .get(" http://localhost:3004/comments")
+      .get(" http://localhost:3001/comments")
       .then((response) => {
         // Handle the response data here
         setProducts(response.data);

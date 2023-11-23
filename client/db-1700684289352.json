@@ -1004,60 +1004,31 @@
       "username": "",
       "password": "159753258",
       "id": 135
-    },
-    {
-      "first_name": "younis",
-      "last_name": "ALLA",
-      "email": "mdommedyounis@gmail.com",
-      "password": "159753258",
-      "id": 136
-    },
-    {
-      "email": "mohammedyounis20011@gmail.com",
-      "password": "FAGBBVSG3VMN6M",
-      "id": 137
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 138
-    },
-    {
-      "first_name": "",
-      "last_name": "",
-      "email": "mdommedyounis@gmail.com",
-      "password": "159753258",
-      "id": 139
     }
   ],
   "comments": [
     {
       "id": 1,
       "product_name": "some moh",
-      "image_url": "https://images.unsplash.com/photo-1660648127319-3f071bbac474?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      "price": "53",
-      "description": "Lorem ipsum is a dummy text used to replace text in some areas just for the purpose of an example. It can be used in publishing and graphic design. It is used to demonstrate the graphics elements of a document, such as font, typography, and layout."
+      "image_url": "https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      "price": "53"
     },
     {
       "id": 2,
       "product_name": "some alaa",
       "image_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/412904668.jpg?k=6bb8083c20252bb52e9d5fe026150ff3f7b01949ba33bde8fb24759c176c1330&o=&hp=1",
-      "price": "30",
-      "description": "Lorem ipsum is a dummy text used to replace text in some areas just for the purpose of an example. It can be used in publishing and graphic design. It is used to demonstrate the graphics elements of a document, such as font, typography, and layout."
+      "price": "30"
     },
     {
       "id": 3,
       "product_name": "some osa",
       "image_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/412904668.jpg?k=6bb8083c20252bb52e9d5fe026150ff3f7b01949ba33bde8fb24759c176c1330&o=&hp=1",
-      "price": "40",
-      "description": "Lorem ipsum is a dummy text used to replace text in some areas just for the purpose of an example. It can be used in publishing and graphic design. It is used to demonstrate the graphics elements of a document, such as font, typography, and layout."
+      "price": "40"
     },
     {
       "id": 4,
       "product_name": "some Isree",
-      "image_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/412904668.jpg?k=6bb8083c20252bb52e9d5fe026150ff3f7b01949ba33bde8fb24759c176c1330&o=&hp=1",
-      "price": "40",
-      "description": "Lorem ipsum is a dummy text used to replace text in some areas just for the purpose of an example. It can be used in publishing and graphic design. It is used to demonstrate the graphics elements of a document, such as font, typography, and layout."
+      "image_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/412904668.jpg?k=6bb8083c20252bb52e9d5fe026150ff3f7b01949ba33bde8fb24759c176c1330&o=&hp=1"
     }
   ],
   "profile": [
@@ -1115,46 +1086,6 @@
       "email": "mdommedyounis@gmail.com",
       "question": "Hello Moh",
       "id": 6
-    },
-    {
-      "quantity": 2,
-      "total": 100,
-      "id": 7
-    },
-    {
-      "quantity": 3,
-      "total": 100,
-      "id": 8
-    },
-    {
-      "quantity": 4,
-      "total": 100,
-      "id": 9
-    },
-    {
-      "quantity": 4,
-      "total": 100,
-      "id": 10
-    },
-    {
-      "quantity": 4,
-      "total": 400,
-      "id": 11
-    },
-    {
-      "quantity": 3,
-      "total": 300,
-      "id": 12
-    },
-    {
-      "quantity": 4,
-      "total": 400,
-      "id": 13
-    },
-    {
-      "quantity": 4,
-      "total": 400,
-      "id": 14
     }
   ]
 }

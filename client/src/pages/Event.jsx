@@ -28,7 +28,7 @@ const Events = () => {
     e.preventDefault();
 
     // Send a POST request with the data to your API endpoint
-    axios.post(' http://localhost:3004/posts', formData)
+    axios.post(' http://localhost:3001/posts', formData)
       .then((response) => {
         // Handle the success response here
         if (response.status === 201) {
@@ -58,7 +58,7 @@ const Events = () => {
         <div className="flex justify-center px-6 py-12">
           <div className="w-full xl:w-3/4 lg:w-11/12 flex">
             <div className="w-full h-auto bg-gray-400 dark:bg-gray-800 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1691442741007-fabc133403f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGltYWdlJTIwZXZlbnR8ZW58MHx8MHx8fDA%3D')" }}
+              style={{ backgroundImage: "url('https://i.pinimg.com/564x/f4/7e/5c/f47e5c92b4f68e1e2cafd17d5b833b6f.jpg')" }}
             ></div>
             <div className="w-full lg:w-7/12 bg-white    rounded-lg lg:rounded-l-none">
             <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">Create Your Event!</h2>
@@ -176,15 +176,49 @@ const Events = () => {
                 </div>
 
                 <div className="mb-4 md:flex md:justify-between">
-                  
+                <div className="mb-4">
+                  <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-black " htmlFor="Direction">
+                  ID photo  *
+                  </label>
+                  <input
+                    className="w-full h-15 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline "
+                    id="file"
+                    type="file"
+                    placeholder="ID photo"
+                    value={formData.direction}
+                     onChange={(e) => setFormData({ ...formData, direction: e.target.value })}
+                     required
+                  />
+                </div>
+                
+
+
+
+
+
+                  <div className="md:ml-2">
+                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-black " htmlFor="Photo">
+                     Photo of the event 
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                      id="file"
+                      type="file"
+                      placeholder="A Photo of the event"
+                      value={formData.photo}
+                     onChange={(e) => setFormData({ ...formData, photo: e.target.value })}
+                     required
+                    />
+                  </div>
+                </div>
                 <div className="md:ml-2">
                     <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-black " htmlFor="Event location ">
-                    Event location *
+                    Date and Time *
                     </label>
                     <input
                       className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                       id="text1"
-                      type="text"
+                      type="datetime-local"
                       placeholder="Location"
                       value={formData.event_location}
                      onChange={(e) => setFormData({ ...formData, event_location: e.target.value })}
@@ -192,24 +226,11 @@ const Events = () => {
                     />
                   </div>
 
-                  <div className="md:ml-2">
-                    <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-black " htmlFor="Photo">
-                     Photo  
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="file"
-                      type="file"
-                      placeholder="A picture of the event"
-                      value={formData.photo}
-                     onChange={(e) => setFormData({ ...formData, photo: e.target.value })}
-                     required
-                    />
-                  </div>
-                </div>
+
+                
                 <div className="mb-4">
                   <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-black " htmlFor="Direction">
-                  Direction  *
+                  Description  *
                   </label>
                   <input
                     className="w-full h-15 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline "
@@ -242,7 +263,7 @@ const Events = () => {
                   <input
                     className="w-full h-15 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline "
                     id="text"
-                    type="link"
+                    type="url"
                     placeholder="link location "
                     value={formData.link_location}
                      onChange={(e) => setFormData({ ...formData, link_location: e.target.value })}

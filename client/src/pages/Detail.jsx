@@ -1,19 +1,72 @@
 // FlipCard.js
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../Component/Filecss/Detail.css'
-import { Link, useParams } from 'react-router-dom';
-import Related from '../Component/Website/Related';
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "../Component/Filecss/Detail.css";
+import { Link, useParams } from "react-router-dom";
+import Related from "../Component/Website/Related";
+import TicketFormPopup from "../Component/Users/Quantity"; // Import the new component
+import Swal from "sweetalert2";
+import Quantity from "../Component/Users/Quantity";
 
 const FlipCard = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [blogPost, setBlogPost] = useState(null);
-  const [cart, setCart] = useState([]);
-  const [favorite, setFavorite] = useState([]);
   const [error, setError] = useState([]);
-  const [blogImages, setBlogImages] = useState(null);
+  const [isRequestModalOpen, setRequestModalOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // const [formData, setFormData] = useState({
+  //   quantity: "",
+  //   ticket_price: "",
+  // });
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+    // Send a POST request with the data to your API endpoint
+  //   axios.post(" http://localhost:3004/posts", formData).then((response) => {
+  //     // Handle the success response here
+
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "Event Created Successfully!",
+  //       text: "Your event has been created successfully.",
+  //       iconColor: "#FE7A00",
+  //     });
+  //   });
+  // };
+
+  // const [showPopup, setShowPopup] = useState(false);
+
+  // const handleModalOpen = () => {
+  //   setRequestModalOpen(true);
+  // };
+
+
+  const handleModalOpen = () => {
+    setRequestModalOpen(true);
+    
+   
+    
+  };
+
+  const handleModalClose = () => {
+    setRequestModalOpen(false);
+  };
+
+ 
+  
+    
+  const handleTicketSubmit = (quantity) => {
+    // Handle the submission of ticket quantity (e.g., make API call to add to cart)
+    console.log(`Adding ${quantity} tickets to cart.`);
+    // You can uncomment and modify the addToPayment function as needed.
+    // addToPayment(quantity);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,17 +86,17 @@ const FlipCard = () => {
   //     }
   //   } catch (error) {
   //     console.log("Error adding to cart:", error);
-      
+
   //   }
   // };
 
-
   useEffect(() => {
-    axios.get(`http://localhost:3004/posts/${id}`)
+    axios
+      .get(`http://localhost:3001/posts/${id}`)
       .then((response) => {
         setBlogPost(response.data);
         // setBlogImages(response.data.images);
-        console.log(response.data); 
+        console.log(response.data);
       })
       .catch((error) => {
         console.error("Error fetching product:", error);
@@ -51,7 +104,7 @@ const FlipCard = () => {
       });
   }, [id]);
 
-  console.log(blogPost); 
+  console.log(blogPost);
 
   if (!blogPost) {
     return <div>Loading...</div>;
@@ -62,33 +115,68 @@ const FlipCard = () => {
       {/* Flip Card Container 1 */}
       <div className="flip-card-container-custom" style={{ "--hue": 40 }}>
         <div className="flip-card-custom">
-          <div className="card-front-custom">
+          <div className="card-front-custom  9">
             <figure>
               <div className="img-bg-custom"></div>
-              <img
-                src={blogPost.image_url}
-                alt={blogPost.product_name}
-              />
-              <figcaption className='text-[#FE7A00]'>{blogPost.name_event}</figcaption>
+              <img src={blogPost.image_url} alt={blogPost.product_name} />
+              <figcaption className="text-[#FE7A00]">
+                {blogPost.name_event}
+              </figcaption>
             </figure>
-            <ul className='uldetail text-start'>
-              <li className='list' > <label className='text-start text-[#FE7A00]'>Name Event : </label>{blogPost.name_event}</li>
-              <li className='list'><label className='text-start text-[#FE7A00]'>Presenter : </label>{blogPost.presenter}</li>
-              <li className='list'><label className='text-start text-[#FE7A00]'>Number_Seats : </label>{blogPost.number_seats}</li>
-              <li className='list'><label className='text-start text-[#FE7A00]'>Description : </label>{blogPost.description}</li>
-              <li className='list'><label className='text-start text-[#FE7A00]'>Ticket_Price : </label>{blogPost.ticket_price}</li>   
+            <ul className="uldetail text-start">
+              <li className="list">
+                {" "}
+                <label className="text-start text-[#FE7A00]">
+                  Name Event :{" "}
+                </label>
+                {blogPost.name_event}
+              </li>
+              <li className="list">
+                <label className="text-start text-[#FE7A00]">
+                  Presenter :{" "}
+                </label>
+                {blogPost.presenter}
+              </li>
+              <li className="list">
+                <label className="text-start text-[#FE7A00]">
+                  Number_Seats :{" "}
+                </label>
+                {blogPost.number_seats}
+              </li>
+              <li className="list">
+                <label className="text-start text-[#FE7A00]">
+                  Description :{" "}
+                </label>
+                {blogPost.description}
+              </li>
+              <li className="list">
+                <label className="text-start text-[#FE7A00]">
+                  Ticket_Price :{" "}
+                </label>
+                {blogPost.ticket_price}
+              </li>
             </ul>
           </div>
           <div className="card-back-custom">
             <figure>
               <div className="img-bg-custom"></div>
-              <img
-                src={blogPost.image_url}
-                alt="Brohm Lake"
-              />
+              <img src={blogPost.image_url} alt="Brohm Lake" />
             </figure>
-            <Link to ="/ticket">
-            <button className='buttonticket text-[#FE7A00]'>Pay Ticket</button></Link>
+            <div>
+              <button
+                className="buttonticket text-[#FE7A00]"
+                onClick={handleModalOpen}
+              >
+                Buy Ticket
+              </button>
+             
+              </div>
+            {/* {showPopup && (
+              <TicketFormPopup
+                onClose={closePopup}
+                onSubmit={handleTicketSubmit}
+              />
+            )} */}
             <div className="design-container-custom">
               <span className="design-custom design--1-custom"></span>
               <span className="design-custom design--2-custom"></span>
@@ -102,10 +190,9 @@ const FlipCard = () => {
           </div>
         </div>
       </div>
-      <div className='flex justify-between '>
-<div className='text-start pt-12 px-20 w-1/2'><label className='text-start text-[#FE7A00]'>Description : </label><p  className='pt-3 '>{blogPost.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere cum odio blanditiis tenetur, facilis ex eaque molestias. Amet unde hic quaerat, cumque maiores accusamus itaque dignissimos inventore enim pariatur obcaecati.</p></div>
- <div className='text-center pt-12 pr-80'>
- <Link to="/payment">
+      <div className="flex justify-between ">
+        <div className="text-center pt-12 pr-80">
+          {/* <Link to="/payment">
               <button
                 // onClick={() => {
                 //   addToCart(product.product_id);
@@ -123,18 +210,13 @@ const FlipCard = () => {
                      stroke-linejoin="round"> 
                     
                       <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" /></svg>
-                {/* Add to cart */}
+             
               </button>
-              </Link>
-              </div>
-              </div>
-      <Related/>
-     
-     
-     
-
-     
-      
+              </Link> */}
+        </div>
+      </div>
+      <Related />
+      <Quantity isOpen={isRequestModalOpen} onclose={handleModalClose}  />
     </>
   );
 };

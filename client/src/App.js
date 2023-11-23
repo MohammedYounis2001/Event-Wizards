@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginForm from "./pages/Login";
+
 import Nav from "./Component/Website/Navbar";
 import Foot from "./Component/Website/Footer";
 import CheckoutPage from "./pages/Payment";
@@ -14,6 +14,14 @@ import CategoryContent from "./pages/CategoryContent";
 import { Ticket } from "./Component/Website/Ticket";
 import NotFound from "./pages/NotFound";
 import Discripiton from "./Component/Website/Discripiton";
+import Quantity from "./Component/Users/Quantity";
+import Log from "./pages/Log";
+import SignUp from "./pages/SignUp";
+import Card from "./Component/Website/Card";
+
+
+
+
 
 
 function App() {
@@ -27,14 +35,17 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="profile" element={<Profile/>}/> 
             <Route path="contact" element={<ContactUs />} />
-            <Route path="login" element={<LoginForm />} />
+            <Route path="login" element={<Log />} />
+            <Route path="signup" element={<SignUp />} />
             <Route path="create event" element={<Events />} />
             <Route path="payment" element={<CheckoutPage />} />
             <Route path="category/:category" element={<CategoryContent />} />
             <Route path="blog/:id" element={<FlipCard/>}/>
             <Route path="ticket" element={<Ticket />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="card" element={<Card />} />
            {/* < Route path="discripiton" element={< Discripiton/>} /> */}
+           {/* <Route path="quantity" element={<Quantity />} /> */}
           </Routes>
       
         </div>
