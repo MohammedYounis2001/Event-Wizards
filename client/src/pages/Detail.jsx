@@ -111,16 +111,19 @@ const FlipCard = () => {
   }
 
   return (
-    <>
+    < >
       {/* Flip Card Container 1 */}
-      <div className="flip-card-container-custom" style={{ "--hue": 40 }}>
+      
+      <div className="flip-card-container-custom " style={{ "--hue": 40 }}>
         <div className="flip-card-custom">
           <div className="card-front-custom  9">
             <figure>
               <div className="img-bg-custom"></div>
               <img src={blogPost.image_url} alt={blogPost.product_name} />
-              <figcaption className="text-[#FE7A00]">
-                {blogPost.name_event}
+             <figcaption className=" text-[#FE7A00]">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
+          </svg>
               </figcaption>
             </figure>
             <ul className="uldetail text-start">
@@ -155,7 +158,11 @@ const FlipCard = () => {
                 </label>
                 {blogPost.ticket_price}
               </li>
+
+             
+
             </ul>
+            
           </div>
           <div className="card-back-custom">
             <figure>

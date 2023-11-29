@@ -62,7 +62,7 @@ const CategoryContent = () => {
   };
 
   return (
-    <div className="my-16">
+    <div className="my-16 bg-[#FEFAF1]">
       <div className="flex justify-center items-center my-8">
         <div className="relative">
           <input

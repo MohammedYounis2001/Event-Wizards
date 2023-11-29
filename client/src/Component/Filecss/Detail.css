@@ -24,13 +24,17 @@
     position: relative;
     transform-style: preserve-3d;
     transition: .6s .1s;
+    /* transition: transform 0.5s ease; */
   }
   
   /* hover and focus-within states */
+
   .flip-card-container-custom:hover .flip-card-custom,
   .flip-card-container-custom:focus-within .flip-card-custom {
     transform: rotateY(180deg);
+    transition-delay: 1s; 
   }
+  
   
   /* .card-... */
   .card-front-custom,

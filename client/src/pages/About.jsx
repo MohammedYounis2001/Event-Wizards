@@ -12,11 +12,11 @@ export default function About() {
   }, []);
 
   return (
-  <div>
+  <div className='bg-[#FEFAF1]'>
 
-    <Aboutus/>
+    <Aboutus />
     <TeamSection/>
-    <Service/>
+    <Service />
   </div>
 
 

@@ -141,6 +141,7 @@ const Quantity = ({ onclose, isOpen }) => {
                   </button>
                 </div>
               </div>
+              <Link to={"/payment"} >
               <button
                 data-modal-hide="popup-modal"
                 type="button"
@@ -148,7 +149,7 @@ const Quantity = ({ onclose, isOpen }) => {
                 onClick={addToPay}
               >
                 Buy now
-              </button>
+              </button></Link>
               
               <button
                 data-modal-hide="popup-modal"

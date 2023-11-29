@@ -37,7 +37,8 @@ const Events = () => {
             title: 'Event Created Successfully!',
             text: 'Your event has been created successfully.',
             timer: 3000,
-            iconColor: '#FE7A00',
+            iconColor: "#FE7A00",
+            confirmButtonColor:"#FE7A00"
           });
         }
       })
@@ -47,13 +48,14 @@ const Events = () => {
           icon: 'error',
           title: 'Error!',
           text: 'An error occurred while creating the event.',
+          confirmButtonColor:"red"
         });
       });
   };
 
 
   return (
-    <div className="h-full ">
+    <div className="h-full bg-[#FEFAF1]">
       <div className="mx-auto">
         <div className="flex justify-center px-6 py-12">
           <div className="w-full xl:w-3/4 lg:w-11/12 flex">
@@ -185,8 +187,8 @@ const Events = () => {
                     id="file"
                     type="file"
                     placeholder="ID photo"
-                    value={formData.direction}
-                     onChange={(e) => setFormData({ ...formData, direction: e.target.value })}
+                    value={formData.idphoto}
+                     onChange={(e) => setFormData({ ...formData, idphoto: e.target.value })}
                      required
                   />
                 </div>
@@ -220,8 +222,8 @@ const Events = () => {
                       id="text1"
                       type="datetime-local"
                       placeholder="Location"
-                      value={formData.event_location}
-                     onChange={(e) => setFormData({ ...formData, event_location: e.target.value })}
+                      value={formData.date}
+                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                      required
                     />
                   </div>
@@ -237,8 +239,8 @@ const Events = () => {
                     id="text"
                     type="text"
                     placeholder="Direction of the event *"
-                    value={formData.direction}
-                     onChange={(e) => setFormData({ ...formData, direction: e.target.value })}
+                    value={formData.description}
+                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                      required
                   />
                 </div>

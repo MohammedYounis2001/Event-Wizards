@@ -21,7 +21,7 @@ const ContactUS = () => {
     e.preventDefault();
 
     // Send a POST request with the data to your API endpoint
-    axios.post(' http://localhost:3004/user', contactData)
+    axios.post(' http://localhost:3001/posts', contactData)
       .then((response) => {
         // Handle the success response here
         if (response.status === 201) {
@@ -46,7 +46,7 @@ const ContactUS = () => {
 
 
   return (
-    <div className="sm:p-10 my-auto ">
+    <div className="sm:p-10 my-auto bg-[#FEFAF1]">
       <section className="mx-auto max-w-screen-xl md:rounded-md md:border md:shadow-lg border border-solid border-orange-400 rounded-md p-4">
         <div className="grid grid-cols-4 text-gray-800 lg:grid-cols-3">
           <div className="col-span-4 bg-gray-50 px-8 py-10 text-gray-800 md:col-span-2 md:border-r md:px-10 md:py-12 lg:col-span-1">

@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from './image/logo.png';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useCookies } from "react-cookie";
 function Navbar() {
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [user, setUser] = useState(false);
+  const [cookie, setCookie, removeCookie] = useCookies(["token"],{token:null});
+  console.log(useCookies(["token"]));
+  useEffect(() => {
+    if (cookie.token !== undefined) {
+      setUser(true);
+    }else{
+      setUser(false);
+    }
+  },[]);
+  console.log(cookie.token);
+  const location = useLocation();
+  if (location.pathname == "/login" || location.pathname == "/signup") {
+    return null;
+  }
   return (
-    <div>
+    <div cl>
       <nav class="bg-white border-gray-200 dark:bg-white">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
         
@@ -14,15 +31,16 @@ function Navbar() {
           </a>
           <button
             data-collapse-toggle="navbar-default"
+            onClick={() => setIsMenuOpened(!isMenuOpened)}
+            aria-controls="navbar-search"
+            aria-expanded={isMenuOpened}
             type="button"
             class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default"
-            aria-expanded="false"
           >
             <span class="sr-only">Open main menu</span>
             <svg
               class="w-5 h-5"
-              aria-hidden="true"
+              aria-hidden={!isMenuOpened}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 17 14"
@@ -37,7 +55,14 @@ function Navbar() {
             </svg>
           </button>
 
+          <div
+            className={`items-center justify-between ${
+              isMenuOpened ? "" : "hidden"
+            } w-full md:flex md:w-auto md:order-1"
+            id="navbar-search`}
+          >
           <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            
             <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-white md:dark:bg-white dark:border-white">
               <li>
                 <Link
@@ -58,10 +83,10 @@ function Navbar() {
               </li>
               <li>
                 <Link
-                  to ="profile"
+                  to ="dashboard"
                   class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#FE7A00] md:p-0 dark:text-[#000] md:dark:hover:text-[#FE7A00] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
-                  Blog
+                 Profile
                 </Link>
               </li>
               <li>
@@ -84,11 +109,25 @@ function Navbar() {
               
             </ul>
           </div>
+          </div>
 
-          <Link to ="login">
-          <button className="bg-[#FE7A00] rounded-full text-white h-10  my-3 px-4">
-                  Signin/Signup
+          <Link
+              to="/login"
+              className={`${!user && "md:block"} hidden`}
+            >
+                       <button className="bg-[#FE7A00] rounded-full text-white h-10  my-3 px-4">
+                  Login
                 </button></Link>
+                <Link
+              to="/profile"
+              className={`${!user ? "hidden" : "block"}`}
+            >
+              <img
+                className="rounded-full h-10 w-10 ml-32"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ9ka6C2Dg57POea71oMW0poPA8jtjGDWacddi1Eg&s"
+                alt="Profile"
+              />
+            </Link>
         </div>
       </nav>
     </div>

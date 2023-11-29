@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Nav from "./Component/Website/Navbar";
 import Foot from "./Component/Website/Footer";
-import CheckoutPage from "./pages/Payment";
+import CheckoutPage from "./Component/Payment";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import ContactUs from "./pages/Contact";
@@ -18,10 +18,12 @@ import Quantity from "./Component/Users/Quantity";
 import Log from "./pages/Log";
 import SignUp from "./pages/SignUp";
 import Card from "./Component/Website/Card";
-
-
-
-
+import ProfilePrivate from "./Component/Users/ProfilePrivate";
+import OrderTicket from "./Component/Users/OrderTicket";
+import OrderEvent from "./Component/Users/OrderEvent";
+import DashProfile from "./Component/Pages/DashProfile";
+import Payment from "./Component/Payment";
+import EidtPorfile from "./Component/EidtPorfile";
 
 
 function App() {
@@ -33,26 +35,37 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="profile" element={<Profile/>}/> 
+            {/* <Route path="profile" element={<Profile />} /> */}
             <Route path="contact" element={<ContactUs />} />
             <Route path="login" element={<Log />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="create event" element={<Events />} />
-            <Route path="payment" element={<CheckoutPage />} />
+            <Route path="payment" element={<Payment />} />
             <Route path="category/:category" element={<CategoryContent />} />
-            <Route path="blog/:id" element={<FlipCard/>}/>
-            <Route path="ticket" element={<Ticket />} />
+            <Route path="blog/:id" element={<FlipCard />} />
+            <Route path="/ticket/:id" element={<Ticket />} />
             <Route path="*" element={<NotFound />} />
             <Route path="card" element={<Card />} />
-           {/* < Route path="discripiton" element={< Discripiton/>} /> */}
-           {/* <Route path="quantity" element={<Quantity />} /> */}
+            {/* <Route path="profileprivate" element={<ProfilePrivate />} />
+            <Route path="orderticket" element={<OrderTicket />} />
+            <Route path="orderevent" element={<OrderEvent />} /> */}
+            <Route path="eidtPorfile" element={<EidtPorfile />} />
+            
+            <Route path="dashboard" element={<DashProfile />}>
+            
+              <Route path="orderTicket" />
+              <Route path="orderEvent" />
+              <Route path="profilePrivate" />
+              <Route index />
+            </Route>
+
+            {/* < Route path="discripiton" element={< Discripiton/>} /> */}
+            {/* <Route path="quantity" element={<Quantity />} /> */}
           </Routes>
-      
+          
         </div>
         <Foot />
-        
       </Router>
-
     </div>
   );
 }

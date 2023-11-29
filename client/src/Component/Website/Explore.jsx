@@ -14,7 +14,7 @@ const ExploreEvent = () => {
 
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const productPerPage = 2;
+  const productPerPage = 3;
   const totalPages = Math.ceil(products.length / productPerPage);
   const indexOfLastProduct = currentPage * productPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productPerPage;
@@ -43,7 +43,7 @@ const ExploreEvent = () => {
   // fetch products
   useEffect(() => {
     axios
-      .get(" http://localhost:3001/comments")
+      .get("  http://localhost:3001/comments")
       .then((response) => {
         // Handle the response data here
         setProducts(response.data);
@@ -77,12 +77,12 @@ const ExploreEvent = () => {
         Explore Our Events
       </h2>
 
-      <div className="relative flex flex-wrap gap-7 justify-center items-center mx-16">
+      <div className="relative flex flex-wrap gap-2 justify-evenly items-center mx-12 ">
         {currentItems.map((product, id) => (
           
           <div 
           key={id}
-          className="group relative m-10 h-96 w-96 overflow-hidden rounded-lg shadow-md">
+          className="group relative m-5 h-96 w-72 overflow-hidden rounded-lg shadow-md bg-slate-50 ">
           {/* Page1 */}
          
           <div className="absolute left-0 top-0 h-full w-full transition-all duration-300 ease-in-out group-hover:-top-96">
@@ -92,7 +92,7 @@ const ExploreEvent = () => {
               className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
             >
             <img
-              className="h-96 w-full object-cover"
+              className="h-96 w-72 object-cover"
               src={product.image_url}
               alt="product image"
             /></Link>

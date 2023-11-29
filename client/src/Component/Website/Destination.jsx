@@ -9,7 +9,7 @@ export default function Destination() {
     <div><>
     
     <div className="section over-hide">
-      <div className="container">
+ 
         <div className="row full-height justify-content-center">
           <div className="col-12 text-center align-self-center py-5">
           <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">
@@ -115,7 +115,7 @@ export default function Destination() {
           </div>
         </div>
       </div>
-    </div>
+  
   </>
   
   </div>
