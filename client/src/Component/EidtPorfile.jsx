@@ -127,7 +127,7 @@ const EidtPorfile = ({ isOpen, onclose }) => {
         onRequestClose={onclose}
         isOpen={isOpen}
       >
-        <div className="flexd items-center justify-center mx-auto mt-2 px-2 ">
+        <div className="fixed items-center justify-center mx-auto mt-2 px-2 ">
           <form className="bg-white mx-auto text-start shadow-md  shadow-orange-500  rounded px-8 pt-6 pb-8 mb-4 flex  justify-center flex-col my-2 Z-10 ">
             <button
               type="button"

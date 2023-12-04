@@ -288,14 +288,14 @@ function OrderTicket() {
                     scope="col"
                     class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-orange-500"
                   >
-                   Event location
+                    Event location
                   </th>
 
                   <th
                     scope="col"
                     class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-orange-500"
                   >
-                     Date{" "}
+                    Date{" "}
                   </th>
 
                   <th
@@ -373,72 +373,73 @@ function OrderTicket() {
                           />
                         </div>
                         <div className="flex flex-col justify-start">
-                        <div className="">
-                        <h2 class="text-sm font-medium  ">{product.presenter}</h2>
-                        <p class="text-xs font-normal text-gray-600 dark:text-gray-400">
-                        {product.email}
-                        </p>
-                      </div>
-                          
+                          <div className="">
+                            <h2 class="text-sm font-medium  ">
+                              {product.presenter}
+                            </h2>
+                            <p class="text-xs font-normal text-gray-600 dark:text-gray-400">
+                              {product.email}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </td>
                     <td className="p-1 pr-0 text-start mx-2 px-4">
-                               <span className="text-center align-baseline inline-flex px-2 py-1 mr-auto items-center text-sm  text-base/none text-orange-400 bg-orange-light rounded-lg">
-                                 {" "}
-                                 {product.idcode}
-                               </span>
-                              </td>
-                              <td className=" pr-0 text-start mx-2 px-4">
-                               <span className="text-center align-baseline inline-flex px-4 py-3 mr-auto items-center font-semibold text-sm leading-none   rounded-lg">
-                                  <Link to={product.link_location}>
-                                    <svg
-                                      class="text-red-600 w-5 h-5"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      {" "}
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </Link>{" "}
-                                  {product.event_location}
-                                </span>
-                              </td>
-                 
-                              <td className=" p-1 pr-0 text-start mx-2 px-4">
-                                <span className="text-sm  text-light-inverse text-md/normal ">
-                                   {product.date}
-                                </span>
-                               </td>
-                               <td className="p-1 pl-5 text-end">
-                                <button className="  relative  text-secondary-dark bg-light-dark hover:text-primary flex items-center h-[25px] w-[25px] text-base font-medium leading-normal text-center align-middle cursor-pointer rounded-2xl transition-colors duration-200 ease-in-out shadow-none border-0 justify-center">
-                                   <span className="flex items-center justify-center p-0 m-0 leading-none shrink-0 text-orange-400">
-                                    <Link to={`/ticket/${product.id}`}>
-                                       <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="h-6 w-6"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                      >
-                                        <path
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                          d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2"
-                                        />
-                                      </svg>
-                                    </Link>
-                                  </span>
-                                </button>
-                              </td>
+                      <span className="text-center align-baseline inline-flex px-2 py-1 mr-auto items-center text-sm  text-base/none text-orange-400 bg-orange-light rounded-lg">
+                        {" "}
+                        {product.idcode}
+                      </span>
+                    </td>
+                    <td className=" pr-0 text-start mx-2 px-4">
+                      <span className="text-center align-baseline inline-flex px-4 py-3 mr-auto items-center font-semibold text-sm leading-none   rounded-lg">
+                        <Link to={product.link_location}>
+                          <svg
+                            class="text-red-600 w-5 h-5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            {" "}
+                            <path
+                              fill-rule="evenodd"
+                              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </Link>{" "}
+                        {product.event_location}
+                      </span>
+                    </td>
+
+                    <td className=" p-1 pr-0 text-start mx-2 px-4">
+                      <span className="text-sm  text-light-inverse text-md/normal ">
+                        {product.date}
+                      </span>
+                    </td>
+                    <td className="p-1 pl-5 text-end">
+                      <button className="  relative  text-secondary-dark bg-light-dark hover:text-primary flex items-center h-[25px] w-[25px] text-base font-medium leading-normal text-center align-middle cursor-pointer rounded-2xl transition-colors duration-200 ease-in-out shadow-none border-0 justify-center">
+                        <span className="flex items-center justify-center p-0 m-0 leading-none shrink-0 text-orange-400">
+                          <Link to={`/ticket/${product.id}`}>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="h-6 w-6"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2"
+                              />
+                            </svg>
+                          </Link>
+                        </span>
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
