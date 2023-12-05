@@ -1,11 +1,11 @@
-import React from 'react'
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
 function Message() {
-    const [deletedItems, setDeletedItems] = useState([]);
+  const [deletedItems, setDeletedItems] = useState([]);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
@@ -35,7 +35,7 @@ function Message() {
       console.error("Error deleting item:", error);
     }
   };
-  
+
   return (
     <div>
       <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
@@ -43,7 +43,7 @@ function Message() {
           <thead class="bg-gray-50">
             <tr>
               <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-               Email
+                Email
               </th>
 
               <th scope="col" class="px-6 py-4 font-medium text-gray-900">
@@ -58,7 +58,6 @@ function Message() {
               <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                 Response
               </th>
-    
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -67,7 +66,6 @@ function Message() {
                 !deletedItems.includes(product.id) && (
                   <tr key={product.id} class="hover:bg-gray-50">
                     <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-                      
                       <div class="text-sm">
                         <div class="font-medium text-gray-700">
                           {product.email}
@@ -76,7 +74,6 @@ function Message() {
                     </th>
                     <td class="px-6 py-4">{product.event_location}</td>
 
-                   
                     <td class="px-6 py-4">
                       <span class="inline-flex items-center gap-1 rounded-full bg-orange-50 px-2 py-1 text-xs font-semibold text-orange-600">
                         {/* <span class="h-1.5 w-1.5 rounded-full bg-orange-600"></span> */}
@@ -84,30 +81,28 @@ function Message() {
                       </span>
                     </td>
                     <td class="px-6 py-4">{product.date}</td>
-                   
 
                     <td class="px-6 py-4">
                       <div class="flex justify-center gap-4">
                         <Link to={`/ticket/${product.id}`}>
-                        <svg
-                          class="text-orange-600 w-7 h-7"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          stroke-width="2"
-                          stroke="currentColor"
-                          fill="none"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          {" "}
-                          <path stroke="none" d="M0 0h24v24H0z" />{" "}
-                          <line x1="15" y1="5" x2="15" y2="7" />{" "}
-                          <line x1="15" y1="11" x2="15" y2="13" />{" "}
-                          <line x1="15" y1="17" x2="15" y2="19" />{" "}
-                          <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
-                        </svg></Link>                      </div>
+                          <svg
+                            class="text-orange-500 w-7 h-7"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76"
+                            />
+                          </svg>
+                        </Link>{" "}
+                      </div>
                     </td>
                   </tr>
                 )
@@ -116,7 +111,7 @@ function Message() {
         </table>
       </div>
     </div>
-  )
+  );
 }
 
-export default Message
+export default Message;

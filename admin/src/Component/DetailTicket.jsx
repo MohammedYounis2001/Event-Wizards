@@ -141,7 +141,7 @@ export const Ticket = () => {
          
         </div>
         <div className=" flex items-center justify-center ">
-     <Link to="/tickets"><button className= " bg-orange-500 hover:bg-orange-700 text-black font-semibold py-2 px-4 rounded">
+     <Link to="/tickets"><button className= " bg-orange-500 hover:bg-orange-700 text-black font-semibold py-2 px-8 rounded">
 Back      </button></Link> 
     </div>
       

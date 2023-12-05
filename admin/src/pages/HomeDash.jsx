@@ -6,6 +6,7 @@ import Users from "../Component/Users";
 import Events from "../Component/Events";
 import Tickets from "../Component/Tickets";
 import Message from "../Component/Message";
+import Search from "../Component/Search";
 function HomeDash() {
   return (
     <>
@@ -17,14 +18,43 @@ function HomeDash() {
             index
             element={
               <div className="flex flex-col space-y-20">
-                <Dashbored /> <Users />{" "}
+                <Search /> <Dashbored /> <Users />{" "}
               </div>
             }
           />
-          <Route path="users" element={<Users />} />
-          <Route path="events" element={<Events />} />
-          <Route path="tickets" element={<Tickets />} />
-          <Route path="message" element={<Message />} />
+          <Route
+            path="users"
+            element={
+              <div className="flex flex-col space-y-10">
+                <Search /> <Users />{" "}
+              </div>
+            }
+          />
+          <Route
+            path="events"
+            element={
+              <div className="flex flex-col space-y-10">
+                <Search /> <Events />{" "}
+              </div>
+            }
+          />
+          <Route path="search" element={<Search />} />
+          <Route
+            path="tickets"
+            element={
+              <div className="flex flex-col space-y-10">
+                <Search /> <Tickets />{" "}
+              </div>
+            }
+          />
+          <Route
+            path="message"
+            element={
+              <div className="flex flex-col space-y-10">
+                <Search /> <Message />{" "}
+              </div>
+            }
+          />
           {/* <Route path="orderEvent" element={<OrderEvent />} />
         <Route path="profilePrivate" element={<ProfilePrivate />} /> */}
         </Routes>

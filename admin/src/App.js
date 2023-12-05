@@ -13,6 +13,7 @@ function App() {
             <Route path="/ticket/:id" element={<Ticket />} />
             <Route path="login" element={<Log />} />
             <Route path="/" element={<HomeDash />}>
+            <Route path="search" />
               <Route path="dashbored" />
               <Route path="users" />
               <Route path="events" />

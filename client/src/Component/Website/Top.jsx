@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../Filecss/Top.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Top() {
   const [products, setProducts] = useState([]);
-
+  useEffect(() => {
+    AOS.init();
+  }, [])
   // fetch products
   useEffect(() => {
     axios
@@ -28,7 +32,7 @@ function Top() {
           Top Event
         </h2>
 
-        <section className="hero-section">
+        <section data-aos="fade-up" className="hero-section">
           {/* <div className="relative flex flex-wrap gap-7 justify-center items-center mx-16"> */}
            
           <div className="card-grid">

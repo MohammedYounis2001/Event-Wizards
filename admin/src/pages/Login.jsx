@@ -38,10 +38,10 @@ function Log() {
         return;
       }
 
-    axios.post('http://localhost:3001/users/login', formData)
+    axios.post('http://localhost:3001/login', formData)
       .then((response) => {
         
-        if (response.status === 200) {
+        if (response.status === 201) {
           console.log(response);
        
             Swal.fire({

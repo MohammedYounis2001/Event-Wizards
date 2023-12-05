@@ -68,7 +68,7 @@ const Users = () => {
                           src={product.image}
                           alt={product.id}
                         />
-                        <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
+                        {/* <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span> */}
                       </div>
                       <div class="text-sm">
                         <div class="font-medium text-gray-700">
