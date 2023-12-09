@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from './image/logo.png';
+import logo from './image/logoaii.png';
 import { Link, useLocation } from "react-router-dom";
 import { useCookies } from "react-cookie";
 function Navbar() {
@@ -20,13 +20,13 @@ function Navbar() {
     return null;
   }
   return (
-    <div cl>
-      <nav class="bg-white border-gray-200 dark:bg-white">
+    <div >
+      <nav class=" border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
         
          
-          <a href="https://flowbite.com/" class="flex items-center">
-            <img src= {logo} class="h-20 w-40 mr-3" alt="Flowbite Logo" />
+          <a href="" class="flex items-center">
+            <img src= {logo} class="h-20 w-32 mr-3 my-1" alt="Flowbite Logo" />
             
           </a>
           <button
@@ -63,7 +63,7 @@ function Navbar() {
           >
           <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             
-            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-white md:dark:bg-white dark:border-white">
+            <ul class=" flex text-sm flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-white md:dark:bg-white dark:border-white">
               <li>
                 <Link
                   to ="/"

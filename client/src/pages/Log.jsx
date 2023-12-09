@@ -34,10 +34,22 @@ function Log() {
       .post("http://localhost:3001/posts", formData)
       .then((response) => {
         if (response.status === 201) {
+          const user = response.data;
+          if (!user.isActive) {
+            // User is not active
+            Swal.fire({
+              icon: "warning",
+              title: "Account Not Activated!",
+              text: "This account is inactive ,Please wait for the administrator to activate your account.",
+              confirmButtonColor: "#FE7A00",
+            });
+           
+            return;
+          }
           Swal.fire({
             icon: "success",
-            title: "Event Created Successfully!",
-            text: "Your event has been created successfully.",
+            title: "Login Successful!",
+            text: "You have successfully logged in.",
             timer: 3000,
             iconColor: "#FE7A00",
             confirmButtonColor:"#FE7A00"

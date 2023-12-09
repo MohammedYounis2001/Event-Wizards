@@ -110,6 +110,7 @@ function Tickets() {
                     </td>
                     <td class="px-6 py-4">{product.event_location}</td>
                     <td class="px-6 py-4">{product.date}</td>
+                    {/* <td class="px-6 py-4">{product.date.split("T")[0] }<span className="block text-center">{product.date.split("T")[1] }</span></td> */}
                     <td class="px-14 py-4">{product.ticket_price}</td>
                     <td class="px-12 py-4">{product.quantity}</td>
 

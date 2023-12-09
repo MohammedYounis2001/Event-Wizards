@@ -42,12 +42,13 @@ function Log() {
       .then((response) => {
         
         if (response.status === 201) {
+        
           console.log(response);
        
             Swal.fire({
                 icon: 'success',
-                title: 'Event Created Successfully!',
-                text: 'Your event has been created successfully.',
+                title: 'Login Successful!',
+                text: 'You have successfully logged in.',
                 timer: 3000,
                 iconColor: '#FE7A00',
               });

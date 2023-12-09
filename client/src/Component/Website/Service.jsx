@@ -1,8 +1,14 @@
 import React from "react";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const Service = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
-    <div className="mt-8  bg-[#FEFAF1]">
+    
+    <div  data-aos="fade-up" className=" mt-8  bg-[#FEFAF1]">
         <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">Services</h2>
      
       <div class="container mx-auto max-w-5xl flex gap-12 flex-wrap items-start justify-center md:justify-between">

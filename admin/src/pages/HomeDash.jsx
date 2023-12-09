@@ -18,7 +18,7 @@ function HomeDash() {
             index
             element={
               <div className="flex flex-col space-y-20">
-                <Search /> <Dashbored /> <Users />{" "}
+                <Search title="Dashboard" /> <Dashbored /> <Users />{" "}
               </div>
             }
           />
@@ -26,7 +26,7 @@ function HomeDash() {
             path="users"
             element={
               <div className="flex flex-col space-y-10">
-                <Search /> <Users />{" "}
+                <Search title="Users" /> <Users />{" "}
               </div>
             }
           />
@@ -34,7 +34,7 @@ function HomeDash() {
             path="events"
             element={
               <div className="flex flex-col space-y-10">
-                <Search /> <Events />{" "}
+                <Search title="Events" /> <Events />{" "}
               </div>
             }
           />
@@ -43,7 +43,7 @@ function HomeDash() {
             path="tickets"
             element={
               <div className="flex flex-col space-y-10">
-                <Search /> <Tickets />{" "}
+                <Search title="Tickets" /> <Tickets />{" "}
               </div>
             }
           />
@@ -51,7 +51,7 @@ function HomeDash() {
             path="message"
             element={
               <div className="flex flex-col space-y-10">
-                <Search /> <Message />{" "}
+                <Search title="Messages" /> <Message />{" "}
               </div>
             }
           />

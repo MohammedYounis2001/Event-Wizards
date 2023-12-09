@@ -19,6 +19,7 @@ function App() {
               <Route path="events" />
               <Route path="tickets" />
               <Route path="message" />
+              <Route path="ContactEmail" />
               
 
             

@@ -24,7 +24,7 @@ function Dashbored() {
   <div className="flex w-72 ">
     <div className="flex w-full max-w-full flex-col break-words rounded-lg border border-gray-100 bg-white text-gray-600 shadow-lg">
       <div className="p-3 ">
-        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr from-gray-700 to-gray-400 text-center text-white shadow-lg">
+        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr  from-orange-700 to-orange-400 text-center text-white shadow-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mt-4 h-7 w-16"
@@ -64,7 +64,7 @@ function Dashbored() {
   <div className="flex w-72">
     <div className="flex w-full max-w-full flex-col break-words rounded-lg border border-gray-100 bg-white text-gray-600 shadow-lg">
       <div className="p-3">
-        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 text-center text-white shadow-lg">
+        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr  from-orange-700 to-orange-400 text-center text-white shadow-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mt-4 h-7 w-16"
@@ -99,7 +99,7 @@ function Dashbored() {
   <div className="flex w-72">
     <div className="flex w-full max-w-full flex-col break-words rounded-lg border border-gray-100 bg-white text-gray-600 shadow-lg">
       <div className="p-3">
-        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr from-emerald-700 to-emerald-500 text-center text-white shadow-lg">
+        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr from-orange-700 to-orange-400 text-center text-white shadow-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mt-4 h-7 w-16"
