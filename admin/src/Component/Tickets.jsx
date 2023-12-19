@@ -7,7 +7,7 @@ function Tickets() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/posts")
+      .get("http://localhost:3001/dachbord/pay/payments")
       .then((response) => {
         // Handle the response data here
         setProducts(response.data);
@@ -44,26 +44,22 @@ function Tickets() {
               </th>
 
               <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                Presenter
+                user name
+              </th>
+             
+              <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                number of Ticket
               </th>
               <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                ID
+                price
               </th>
               <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                Event location
+                total
               </th>
               <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                Date
+                payment status 
               </th>
-              <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                Ticket price
-              </th>
-              <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                Quantity
-              </th>
-              <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                Detail
-              </th>
+             
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -75,46 +71,39 @@ function Tickets() {
                       <div class="relative h-10 w-10">
                         <img
                           class="h-full w-full rounded-full object-cover object-center"
-                          src={product.photo}
+                          src={product.image_url}
                           alt={product.id}
                         />
                       </div>
                       <div class="text-sm">
                         <div class="font-medium text-gray-700">
-                          {product.first_name}
+                          {product.event_name}
                         </div>
                       </div>
                     </th>
                     <td>
                       {" "}
                       <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-                        <div class="relative h-10 w-10">
-                          <img
-                            class="h-full w-full rounded-full object-cover object-center"
-                            src={product.photo}
-                            alt={product.id}
-                          />
-                        </div>
+                      
                         <div class="text-sm">
                           <div class="font-medium text-gray-700">
-                            {product.first_name}
+                            {product.first_name}{product.last_name}
                           </div>
                         </div>
                       </th>
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="flex gap-3 px-6 py-4 font-normal text-gray-900">
                       <span class="inline-flex items-center gap-1 rounded-full bg-orange-50 px-2 py-1 text-xs font-semibold text-orange-600">
                         {/* <span class="h-1.5 w-1.5 rounded-full bg-orange-600"></span> */}
-                        #{product.id}
+                        #{product.amount}
                       </span>
                     </td>
-                    <td class="px-6 py-4">{product.event_location}</td>
-                    <td class="px-6 py-4">{product.date}</td>
-                    {/* <td class="px-6 py-4">{product.date.split("T")[0] }<span className="block text-center">{product.date.split("T")[1] }</span></td> */}
-                    <td class="px-14 py-4">{product.ticket_price}</td>
-                    <td class="px-12 py-4">{product.quantity}</td>
+                    <td class="px-6 py-4">{product.price}</td>
+                    <td class="px-6 py-4">{product.total}</td>
+                    <td class="px-14 py-4">{product.payment_status}</td>
+                    
 
-                    <td class="px-6 py-4">
+                    {/* <td class="px-6 py-4">
                       <div class="flex justify-center gap-4">
                         <Link to={`/ticket/${product.id}`}>
                           <svg
@@ -138,7 +127,7 @@ function Tickets() {
                           </svg>
                         </Link>{" "}
                       </div>
-                    </td>
+                    </td> */}
                   </tr>
                 )
             )}

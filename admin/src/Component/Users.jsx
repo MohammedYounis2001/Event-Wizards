@@ -7,7 +7,7 @@ const Users = () => {
   const [isActionActive, setIsActionActive] = useState(true);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/login")
+      .get("http://localhost:3004/login")
       .then((response) => {
         // Handle the response data here
         setProducts(response.data);
@@ -21,7 +21,7 @@ const Users = () => {
 
   const handleToggleAcceptance = async (id) => {
     try {
-      const response = await axios.patch(`http://localhost:3001/login/${id}`, {
+      const response = await axios.patch(`http://localhost:3004/login/${id}`, {
         isUnBlock: !products.find((product) => product.id === id).isUnBlock,
       });
 
@@ -43,7 +43,7 @@ const Users = () => {
   const handleSoftDelete = async (id) => {
     try {
       // Make an Axios request to update the server-side data
-      await axios.patch(`http://localhost:3001/login/${id}`, {
+      await axios.patch(`http://localhost:3004/login/${id}`, {
         isDeleted: true,
       });
 

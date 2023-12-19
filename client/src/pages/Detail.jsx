@@ -19,33 +19,7 @@ const FlipCard = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // const [formData, setFormData] = useState({
-  //   quantity: "",
-  //   ticket_price: "",
-  // });
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-    // Send a POST request with the data to your API endpoint
-  //   axios.post(" http://localhost:3004/posts", formData).then((response) => {
-  //     // Handle the success response here
-
-  //     Swal.fire({
-  //       icon: "success",
-  //       title: "Event Created Successfully!",
-  //       text: "Your event has been created successfully.",
-  //       iconColor: "#FE7A00",
-  //     });
-  //   });
-  // };
-
-  // const [showPopup, setShowPopup] = useState(false);
-
-  // const handleModalOpen = () => {
-  //   setRequestModalOpen(true);
-  // };
-
+  
 
   const handleModalOpen = () => {
     setRequestModalOpen(true);
@@ -72,27 +46,11 @@ const FlipCard = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // const addToPayment = async () => {
-  //   try {
-  //     const response = await axios.post('http://localhost:5000/add-to-cart', {
-  //       "quantity" : quantity,
-  //       "user_id" : 5,
-  //       "product_id" :id,
-  //         });
-  //     if (response.status === 201) {
-  //       alert("Added to cart successfully!");
-  //       setCart([...cart, blogPost]);
-  //       console.log ('hi')
-  //     }
-  //   } catch (error) {
-  //     console.log("Error adding to cart:", error);
 
-  //   }
-  // };
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/posts/${id}`)
+      .get(`http://localhost:3004/posts/${id}`)
       .then((response) => {
         setBlogPost(response.data);
         // setBlogImages(response.data.images);
@@ -113,7 +71,7 @@ const FlipCard = () => {
   return (
     < >
       {/* Flip Card Container 1 */}
-      
+      <div className="md:flex  ">
       <div className="flip-card-container-custom " style={{ "--hue": 40 }}>
         <div className="flip-card-custom">
           <div className="card-front-custom  9">
@@ -126,8 +84,8 @@ const FlipCard = () => {
           </svg>
               </figcaption>
             </figure>
-            <ul className="uldetail text-start">
-              <li className="list">
+            <ul className="uldetail text-start ">
+              {/* <li className="list">
                 {" "}
                 <label className="text-start text-[#FE7A00]">
                   Name Event :{" "}
@@ -151,13 +109,13 @@ const FlipCard = () => {
                   Description :{" "}
                 </label>
                 {blogPost.description}
-              </li>
-              <li className="list">
+              </li> */}
+              {/* <li className="list">
                 <label className="text-start text-[#FE7A00]">
                   Ticket_Price :{" "}
                 </label>
                 {blogPost.ticket_price}
-              </li>
+              </li> */}
 
              
 
@@ -178,12 +136,7 @@ const FlipCard = () => {
               </button>
              
               </div>
-            {/* {showPopup && (
-              <TicketFormPopup
-                onClose={closePopup}
-                onSubmit={handleTicketSubmit}
-              />
-            )} */}
+           
             <div className="design-container-custom">
               <span className="design-custom design--1-custom"></span>
               <span className="design-custom design--2-custom"></span>
@@ -197,30 +150,69 @@ const FlipCard = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between ">
-        <div className="text-center pt-12 pr-80">
-          {/* <Link to="/payment">
+      <div className="flex justify-between  lg:mr-40 md:mr-32 ml-10 ">
+        <div className="text-center pt-12  ">
+        <ul className="uldetail2 text-start">
+              <li className="list  flex ">
+                {" "}
+                <div className="">
+                <label className="text-start text-[#FE7A00] mr-2 w-[50px]">
+                  Name Event :{" "}
+                </label>
+                </div>
+                <div >
+                {blogPost.name_event}</div>
+              </li>
+              <li className="list flex">
+              <div className="">
+                <label className="text-start text-[#FE7A00] mr-2">
+                  Presenter :{" "}
+                </label></div>
+<div>
+                {blogPost.presenter}</div>
+              </li>
+              <li className="list flex">
+                <div>
+                <label className="text-start text-[#FE7A00] mr-2">
+                  Number_Seats :{" "}
+                </label></div>
+                <div>
+                {blogPost.number_seats}</div>
+              </li>
+              <li className="list flex">
+                <div>
+                <label className="text-start text-[#FE7A00] mr-2">
+                  Description :{" "}
+                </label></div>
+                <div>
+                {blogPost.description}</div>
+              </li>
+              <li className="list flex">
+                <div>
+                <label className="text-start text-[#FE7A00] mr-2">
+                  Ticket_Price :{" "}
+                </label></div>
+                <div>
+                {blogPost.ticket_price}</div>
+              </li>
+
+              <div>
               <button
-                // onClick={() => {
-                //   addToCart(product.product_id);
-                // }}
-                className=" flex items-center justify-center rounded-full bg-[#FE7A00] px-1 py-2.5 text-center text-sm font-medium text-white hover:bg-orange-700  "
+                className="buttonticket2 mt-4"
+                onClick={handleModalOpen}
               >
-                  <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg"
-                   width="24"
-                    height="24" 
-                   viewBox="0 0 24 24" 
-                   stroke-width="2" 
-                   stroke="currentColor"
-                    fill="none" 
-                    stroke-linecap="round"
-                     stroke-linejoin="round"> 
-                    
-                      <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" /></svg>
-             
+                Buy Ticket
               </button>
-              </Link> */}
+             
+              </div>
+
+            </ul>
         </div>
+      </div>
+      {/* <div className="flex ">
+            
+            
+          </div> */}
       </div>
       <Related />
       <Quantity isOpen={isRequestModalOpen} onclose={handleModalClose}  />

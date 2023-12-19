@@ -33,7 +33,7 @@ const Quantity = ({ onclose, isOpen }) => {
       const updatedTotal = total * quantity;
   
       // Make a POST request with the updated values
-      const response = await axios.post('http://localhost:3001/user', {
+      const response = await axios.post('http://localhost:3004/user', {
         quantity: quantity,
         total: updatedTotal,
       });

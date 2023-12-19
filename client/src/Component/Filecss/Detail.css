@@ -166,6 +166,20 @@
     flex-direction: column;
   }
   
+  .uldetail2{
+    padding-top: 50%;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  
+    list-style: none;
+    color: var(--white-4);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   /* li */
  .list {
     width: 100%;
@@ -178,6 +192,16 @@
     position: relative;
   }
   
+  .list {
+    width: 100%;
+    margin-top: 12px;
+    padding-bottom: 12px;
+  
+    font-size: 22px;
+    text-align: start;
+  
+    position: relative;
+  }
   li:nth-child(2n) {
     color: var(--white-2);
   }
@@ -209,6 +233,22 @@
     border-radius: 1000px;
     background: transparent;
     transition: .3s;
+  
+    cursor: pointer;
+  }
+
+  .buttonticket2 {
+    font-family: inherit;
+    font-weight: bold;
+    color: var(--white-4);
+  
+    letter-spacing: 2px;
+    color:#FE7A00;
+    padding: 9px 20px;
+    border: 1px solid var(--grey);
+    border-radius: 1000px;
+    background: transparent;
+    transition: .1s;
   
     cursor: pointer;
   }

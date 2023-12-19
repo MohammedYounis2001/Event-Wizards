@@ -177,7 +177,8 @@
       "date": "2023-11-25T22:16",
       "description": "How are you",
       "additions": "aWAFEGSRHDTKGULHIOJ;ILYUKTDSERAGWFSD",
-      "link_location": "https://maps.app.goo.gl/5fjRJFfQ3HiVX1UF9"
+      "link_location": "https://maps.app.goo.gl/5fjRJFfQ3HiVX1UF9",
+      "isDeleted": true
     },
     {
       "name_event": "Play",
@@ -220,7 +221,7 @@
       "zip": "96500",
       "isDeleted": true,
       "isAccepted": true,
-      "isUnBlock": true
+      "isUnBlock": false
     },
     {
       "id": 2,
@@ -234,7 +235,7 @@
       "zip": "96500",
       "isDeleted": true,
       "isAccepted": true,
-      "isUnBlock": true
+      "isUnBlock": false
     },
     {
       "id": 3,

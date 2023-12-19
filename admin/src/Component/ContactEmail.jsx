@@ -19,7 +19,7 @@ const ContactEmail = ({ isOpen, onclose, E_id }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/posts/${id}`);
+        const response = await axios.get(`http://localhost:3004/posts/${id}`);
         setUser(response.data);
         console.log("in axios", response.data);
         setDataLoaded(true);

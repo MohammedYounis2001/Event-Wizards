@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import logo from "../Component/Website/image/moh.JPG";
 
 function Log() {
   useEffect(() => {
@@ -31,7 +32,7 @@ function Log() {
     }
 
     axios
-      .post("http://localhost:3001/posts", formData)
+      .post("http://localhost:3004/posts", formData)
       .then((response) => {
         if (response.status === 201) {
           const user = response.data;
@@ -81,7 +82,7 @@ function Log() {
             <div className="flex items-center">
               <img
                 className="h-10 w-10 rounded-full object-cover"
-                src="Simon Lewis"
+                src={logo} 
                 alt="Simon Lewis"
               />
               <p className="ml-4 w-56">

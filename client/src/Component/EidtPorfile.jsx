@@ -5,22 +5,133 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import Swal from "sweetalert2";
 
-const EidtPorfile = ({ isOpen, onclose }) => {
-  const navigate = useNavigate();
+// const EidtPorfile = ({ isOpen, onclose ,eventId}) => {
+//   const navigate = useNavigate();
+//   const { id } = useParams();
+//   const [error, setError] = useState("");
+//   const [user, setUser] = useState({
+//     // ... other properties
+//   });
+
+//   const [dataLoaded, setDataLoaded] = useState(false);
+
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const response = await axios.get(`http://localhost:3001/event/event?id=${eventId}`);
+//         setUser(response.data);
+//         console.log("in axios", response.data);
+//         setDataLoaded(true);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, [id, isOpen]); // Include 'id' and 'isOpen' as dependencies
+
+//   const handleSaveChanges = async (e) => {
+//     e.preventDefault();
+//     if (!error) {
+//       const updatedUser = {};
+
+//       updatedUser.id = user.id;
+//       if (user.event_name !== "") {
+//         updatedUser.event_name = user.event_name;
+//       }
+
+//       // if (user.first_name !== "") {
+//       //   updatedUser.first_name = user.first_name;
+//       // }
+
+//       // if (user.last_name !== "") {
+//       //   updatedUser.last_name = user.last_name;
+//       // }
+//       if (user.speaker !== "") {
+//         updatedUser.speaker = user.speaker;
+//       }
+
+//       // if (user.event_location !== "") {
+//       //   updatedUser.event_location = user.event_location;
+//       // }
+//       if (user.tickets !== "") {
+//         updatedUser.tickets = user.tickets;
+//       }
+//       if (user.price !== "") {
+//         updatedUser.price = user.price;
+//       }
+//       if (user.image_url !== "") {
+//         updatedUser.image_url = user.image_url;
+//       }
+//       // if (user.idphoto !== "") {
+//       //   updatedUser.idphoto = user.idphoto;
+//       // }
+//       if (user.date !== "") {
+//         updatedUser.date = user.date;
+//       }
+//       if (user.direction !== "") {
+//         updatedUser.direction = user.direction;
+//       }
+//       // if (user.additions !== "") {
+//       //   updatedUser.additions = user.additions;
+//       // }
+//       if (user.location_url !== "") {
+//         updatedUser.location_url = user.location_url;
+//       }
+
+//       console.log(updatedUser);
+
+//       try {
+//         const response = await axios.put(
+//           `http://localhost:3001/event/update?id=${eventId}`,
+//           updatedUser
+          
+//           // Use user state for updating
+//         );
+        
+//         console.log(updatedUser);
+//           Swal.fire({
+//             icon: "success",
+//             title: "Event Update  Successfully!",
+//             text: "Your event has been update successfully.",
+//             timer: 3000,
+//             iconColor: "#FE7A00",
+//             confirmButtonColor:"#FE7A00"
+//           });
+//           // navigate("/dashboard");
+
+//         // window.location.reload();
+
+        
+//         // onclose(); // Close the modal after successful submission
+//         // console.log(response.data);
+//       } catch (error) {
+//         alert("Error updating Information");
+//       }
+//     }
+//   };
+
+//   const handleChange = (e) => {
+//     setUser({
+//       ...user,
+//       [e.target.name]: e.target.value,
+//     });
+//   };
+const EidtPorfile = ({ isOpen, onclose, eventId }) => {
+    const navigate = useNavigate();
   const { id } = useParams();
   const [error, setError] = useState("");
   const [user, setUser] = useState({
     // ... other properties
   });
-
   const [dataLoaded, setDataLoaded] = useState(false);
-
-  useEffect(() => {
+    useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/user");
-        setUser(response.data[0]);
-        console.log("in axios", response.data);
+        const response = await axios.get(`http://localhost:3001/event/event?id=${eventId}`);
+        setUser(response.data);
+        
         setDataLoaded(true);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -28,94 +139,55 @@ const EidtPorfile = ({ isOpen, onclose }) => {
     };
 
     fetchData();
-  }, [id, isOpen]); // Include 'id' and 'isOpen' as dependencies
-
+  }, [id, isOpen]); 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setUser((prevUser) => ({
+      ...prevUser,
+      image_url: file,
+    }));
+  };
+  
   const handleSaveChanges = async (e) => {
     e.preventDefault();
     if (!error) {
-      const updatedUser = {};
+      const formData = new FormData();
 
-      updatedUser.id = user.id;
-      if (user.name_event !== "") {
-        updatedUser.name_event = user.name_event;
-      }
-
-      if (user.first_name !== "") {
-        updatedUser.first_name = user.first_name;
-      }
-
-      if (user.last_name !== "") {
-        updatedUser.last_name = user.last_name;
-      }
-      if (user.presenter !== "") {
-        updatedUser.presenter = user.presenter;
-      }
-
-      if (user.event_location !== "") {
-        updatedUser.event_location = user.event_location;
-      }
-      if (user.number_seats !== "") {
-        updatedUser.number_seats = user.number_seats;
-      }
-      if (user.ticket_price !== "") {
-        updatedUser.ticket_price = user.ticket_price;
-      }
-      if (user.photo !== "") {
-        updatedUser.photo = user.photo;
-      }
-      if (user.idphoto !== "") {
-        updatedUser.idphoto = user.idphoto;
-      }
-      if (user.date !== "") {
-        updatedUser.date = user.date;
-      }
-      if (user.description !== "") {
-        updatedUser.description = user.description;
-      }
-      if (user.additions !== "") {
-        updatedUser.additions = user.additions;
-      }
-      if (user.link_location !== "") {
-        updatedUser.link_location = user.link_location;
-      }
-
-      console.log(updatedUser);
+      
+      
+      formData.append('event_name', user.event_name);
+      formData.append('location_url', user.location_url);
+      formData.append('tickets', user.tickets);
+      formData.append('speaker', user.speaker);
+      formData.append('date', user.date);
+      formData.append('direction', user.direction);
+      formData.append('image_url', user.image_url);
+      formData.append('image_id', null);
+      
 
       try {
         const response = await axios.put(
-          `http://localhost:3001/user/1`,
-          updatedUser
-          
-          // Use user state for updating
+          `http://localhost:3001/event/update?id=${eventId}`,
+          formData,
         );
-        
-        
-          Swal.fire({
-            icon: "success",
-            title: "Event Update  Successfully!",
-            text: "Your event has been update successfully.",
-            timer: 3000,
-            iconColor: "#FE7A00",
-            confirmButtonColor:"#FE7A00"
-          });
-          navigate("/dashboard");
 
-        // window.location.reload();
+        console.log(response.data);
 
-        
-        // onclose(); // Close the modal after successful submission
-        // console.log(response.data);
+        Swal.fire({
+          icon: 'success',
+          title: 'Event Update Successfully!',
+          text: 'Your event has been updated successfully.',
+          timer: 3000,
+          iconColor: '#FE7A00',
+          confirmButtonColor: '#FE7A00',
+        });
+
+        // You may want to close the modal or perform other actions here
       } catch (error) {
-        alert("Error updating Information");
+        console.error('Error updating Information:', error);
+        alert('Error updating Information');
       }
     }
-  };
-
-  const handleChange = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (
@@ -127,8 +199,8 @@ const EidtPorfile = ({ isOpen, onclose }) => {
         onRequestClose={onclose}
         isOpen={isOpen}
       >
-        <div className="fixed items-center justify-center mx-auto mt-2 px-2 ">
-          <form className="bg-white mx-auto text-start shadow-md  shadow-orange-500  rounded px-8 pt-6 pb-8 mb-4 flex  justify-center flex-col my-2 Z-10 ">
+        <div className="flexd items-center justify-center mx-auto mt-2 px-2 ">
+          <form className="bg-white mx-auto text-start shadow-md  shadow-orange-500  rounded px-8 pt-6 pb-8 mb-4 flex  justify-center flex-col my-2 Z-10 "  encType="multipart/form-data" >
             <button
               type="button"
               class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -155,7 +227,7 @@ const EidtPorfile = ({ isOpen, onclose }) => {
             <div class="p-4 md:p-5 text-center">
               <h3 className="pt-4 text-[#FE7A00]">
                 {" "}
-                Complete the purchase process
+                
               </h3>
 
               <div className="mb-4">
@@ -169,14 +241,14 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                   className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="text"
                   type="text"
-                  value={user.name_event}
+                  value={user.event_name}
                   onChange={(e) =>
-                    setUser({ ...user, name_event: e.target.value })
+                    setUser({ ...user, event_name: e.target.value })
                   }
-                  placeholder={user.name_event}
+                  placeholder={user.event_name}
                 />
               </div>
-              <div className="mb-4 md:flex md:justify-between">
+              {/* <div className="mb-4 md:flex md:justify-between">
                 <div className="mb-4 md:mr-2 md:mb-0">
                   <label
                     className="block mb-2 text-sm font-bold text-gray-700 dark:text-black "
@@ -213,7 +285,7 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                     placeholder={user.last_name}
                   />
                 </div>
-              </div>
+              </div> */}
 
               <div className="mb-4 md:flex md:justify-between">
                 <div className="mb-4 md:mr-2 md:mb-0">
@@ -221,20 +293,20 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                     className="block mb-2 text-sm font-bold text-gray-700 dark:text-black "
                     htmlFor="Presenter "
                   >
-                    Presenter *
+                    speaker *
                   </label>
                   <input
                     className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border  rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="text"
                     type="text"
-                    value={user.presenter}
+                    value={user.speaker}
                     onChange={(e) =>
-                      setUser({ ...user, presenter: e.target.value })
+                      setUser({ ...user, speaker: e.target.value })
                     }
-                    placeholder={user.presenter}
+                    placeholder={user.speaker}
                   />
                 </div>
-                <div className="md:ml-2">
+                {/* <div className="md:ml-2">
                   <label
                     className="block mb-2 text-sm font-bold text-gray-700 dark:text-black "
                     htmlFor="Event location "
@@ -251,7 +323,7 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                     }
                     placeholder={user.event_location}
                   />
-                </div>
+                </div> */}
               </div>
 
               <div className="mb-4 md:flex md:justify-between">
@@ -266,14 +338,14 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                     className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="text"
                     type="number"
-                    value={user.number_seats}
+                    value={user.tickets}
                     onChange={(e) =>
-                      setUser({ ...user, number_seats: e.target.value })
+                      setUser({ ...user, tickets: e.target.value })
                     }
-                    placeholder={user.number_seats}
+                    placeholder={user.tickets}
                   />
                 </div>
-                <div className="mb-4 md:mr-2 md:mb-0">
+                {/* <div className="mb-4 md:mr-2 md:mb-0">
                   <label
                     className="block mb-2 text-sm font-bold text-gray-700 dark:text-black "
                     htmlFor="price  "
@@ -290,11 +362,11 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                     }
                     placeholder={user.ticket_price}
                   />
-                </div>
+                </div> */}
               </div>
 
               <div className="mb-4 md:flex md:justify-between">
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <label
                     className="block mb-2 text-sm font-bold text-gray-700 dark:text-black "
                     htmlFor="Direction"
@@ -311,7 +383,7 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                     }
                     
                   />
-                </div>
+                </div> */}
 
                 <div className="md:ml-2">
                   <label
@@ -321,15 +393,12 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                     Photo of the event
                   </label>
                   <input
-                    className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="file"
-                    type="file"
-                    
-                    onChange={(e) =>
-                      setUser({ ...user, idphoto: e.target.value })
-                    }
-                   
-                  />
+  className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+  id="file"
+  type="file"
+  onChange={(e) => handleFileChange(e)}
+/>
+
                 </div>
               </div>
               <div className="md:ml-2">
@@ -360,14 +429,14 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                   className="w-full h-15 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline "
                   id="text"
                   type="text"
-                  value={user.description}
+                  value={user.direction}
                   onChange={(e) =>
-                    setUser({ ...user, description: e.target.value })
+                    setUser({ ...user, direction: e.target.value })
                   }
-                  placeholder={user.description}
+                  placeholder={user.direction}
                 />
               </div>
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <label
                   className="block mb-2 text-sm font-bold text-gray-700 dark:text-black "
                   htmlFor="Additions"
@@ -384,7 +453,7 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                   }
                   placeholder={user.additions}
                 />
-              </div>
+              </div> */}
               <div className="mb-4">
                 <label
                   className="block mb-2 text-sm font-bold text-gray-700 dark:text-black "
@@ -396,11 +465,11 @@ const EidtPorfile = ({ isOpen, onclose }) => {
                   className="w-full h-15 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-black  border rounded shadow appearance-none focus:outline-none focus:shadow-outline "
                   id="text"
                   type="url"
-                  value={user.link_location}
+                  value={user.location_url}
                   onChange={(e) =>
-                    setUser({ ...user, link_location: e.target.value })
+                    setUser({ ...user, location_url: e.target.value })
                   }
-                  placeholder={user.link_location}
+                  placeholder={user.location_url}
                 />
               </div>
 

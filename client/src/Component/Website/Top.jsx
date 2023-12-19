@@ -13,7 +13,7 @@ function Top() {
   // fetch products
   useEffect(() => {
     axios
-      .get(" http://localhost:3001/comments")
+      .get(" http://localhost:3004/comments")
       .then((response) => {
         // Handle the response data here
         setProducts(response.data);
@@ -31,8 +31,8 @@ function Top() {
         <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">
           Top Event
         </h2>
-
-        <section data-aos="fade-up" className="hero-section">
+        {/* data-aos="fade-up"  */}
+        <section className="hero-section">
           {/* <div className="relative flex flex-wrap gap-7 justify-center items-center mx-16"> */}
            
           <div className="card-grid">

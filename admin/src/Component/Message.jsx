@@ -15,7 +15,7 @@ function Message() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/posts")
+      .get("http://localhost:3004/posts")
       .then((response) => {
         // Handle the response data here
         setProducts(response.data);
@@ -31,7 +31,7 @@ function Message() {
   const handleSoftDelete = async (id) => {
     try {
       // Make an Axios request to update the server-side data
-      await axios.patch(`http://localhost:3001/login/${id}`, {
+      await axios.patch(`http://localhost:3004/login/${id}`, {
         isDeleted: true,
       });
 

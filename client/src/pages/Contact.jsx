@@ -21,7 +21,7 @@ const ContactUS = () => {
     e.preventDefault();
 
     // Send a POST request with the data to your API endpoint
-    axios.post(' http://localhost:3001/posts', contactData)
+    axios.post(' http://localhost:3004/posts', contactData)
       .then((response) => {
         // Handle the success response here
         if (response.status === 201) {
@@ -46,8 +46,8 @@ const ContactUS = () => {
 
 
   return (
-    <div className="sm:p-10 my-auto bg-[#FEFAF1]">
-      <section className="mx-auto max-w-screen-xl md:rounded-md md:border md:shadow-lg border border-solid border-orange-400 rounded-md p-4">
+    <div className="sm:p-10 my-auto ">
+      <section className="mx-auto max-w-screen-xl md:rounded-md md:border md:shadow-lg border border-solid border-orange-400 rounded-md p-4 bg-[#FEFAF1]">
         <div className="grid grid-cols-4 text-gray-800 lg:grid-cols-3">
           <div className="col-span-4 bg-gray-50 px-8 py-10 text-gray-800 md:col-span-2 md:border-r md:px-10 md:py-12 lg:col-span-1">
           <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">Contact </h2>
@@ -70,7 +70,7 @@ const ContactUS = () => {
                 </svg>
                 <div>
                   <a
-                    className="cursor-pointer font-serif text-base md:text-lg"
+                    className="cursor-pointer font-serif text-base md:text-sm lg:text-lg"
                     href="mailto:abraham@microsoft.com"
                   >
                   eventwizards@gmail.com
@@ -96,7 +96,7 @@ const ContactUS = () => {
                 </svg>
                 <div>
                   <a
-                    className="cursor-pointer font-serif text-base md:text-lg"
+                    className="cursor-pointer font-serif text-base md:text-sm lg:text-lg"
                     href="https://twitter.com/abrahama.real"
                   >
                     eventwizards.real
@@ -123,7 +123,7 @@ const ContactUS = () => {
                   />
                 </svg>
                 <div>
-                  <p className="font-serif text-base md:text-lg">EventWizards</p>
+                  <p className="font-serif text-base md:text-sm lg:text-lg">EventWizards</p>
                   <span className="block text-xs uppercase">LinkedIn</span>
                 </div>
               </li>
@@ -136,34 +136,34 @@ const ContactUS = () => {
             </p>
             <form action="" onSubmit={handleSubmit}>
               <div className="md:col-gap-4 mb-5 grid md:grid-cols-2 ">
-                <input
-                  className="col-span-1 w-full border-b py-3 text-sm outline-none focus:border-b-2 focus:border-black    "
+               <div className='mr-1 '> <input
+                  className="col-span-1 w-full border-b py-3 text-sm outline-none focus:border-b-2 focus:border-black  mr-3 px-2 "
                   type="text"
                   placeholder="Name"
                   name="name"
                   value={contactData.first_name}
                      onChange={(e) => setContactData({ ...contactData, first_name: e.target.value })}
                      required
-                />
-                <input
-                  className="col-span-1 w-full border-b py-3 text-sm outline-none focus:border-b-2 focus:border-black"
+                /></div>
+                <div className='mr-1'><input
+                  className="col-span-1 w-full border-b py-3 text-sm outline-none focus:border-b-2 focus:border-black mr-3 px-2"
                   type="email"
                   placeholder="Email"
                   name="email"
                   value={contactData.email}
                      onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
                      required
-                />
+                /></div>
               </div>
-              <textarea
-                className="mb-10 w-full resize-y whitespace-pre-wrap border-b py-3 text-sm outline-none focus:border-b-2 focus:border-black"
+              <div className='mr-1 '> <textarea
+                className="mb-10 w-full  resize-y whitespace-pre-wrap border-b py-3 text-sm outline-none focus:border-b-2 focus:border-black mr-3 px-2"
                 rows="6"
                 placeholder="Question"
                 name="question"
                 value={contactData.question}
                      onChange={(e) => setContactData({ ...contactData, question: e.target.value })}
                      required
-              ></textarea>
+              ></textarea></div> 
               <button
                 type="submit"
                 className="group flex cursor-pointer items-center rounded-xl bg-[#FE7A00] bg-none px-8 py-4 text-center font-semibold leading-tight text-white"

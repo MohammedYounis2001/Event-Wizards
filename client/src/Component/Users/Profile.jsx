@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import SecondPorfile from "../Website/SecondPorfile";
 import axios from "axios";
 
 function Profile() {
-  const [user, setUser] = useState({
-    // ... other properties
-  });
+  const [user, setUser] = useState({});
+  const [isSideOpen, setIsSideOpen] = useState(false);
 
   useEffect(() => {
-    // console.log("Fetching data...");
-    // console.log("Headers:", headers);
-
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/Login`, {
-          // headers: headers,
-        });
+        const response = await axios.get("http://localhost:3004/Login");
         console.log("Response:", response.data);
         setUser(response.data[0]);
       } catch (error) {
@@ -27,11 +20,20 @@ function Profile() {
     fetchData();
   }, []);
 
+  const openSidebar = () => {
+    setIsSideOpen(true);
+  };
+
+  const closeSidebar = () => {
+    setIsSideOpen(false);
+  };
   return (
     <>
       {/* ml-[-100%] */}
-      <div className="   z-1 top-0 sticky  pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-[#FFFDF7] transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] ">
+      <div className="   z-1 top-0 sticky  pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-[#c65f20] transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] ">
+        
         <div>
+          
           <div className="mt-8 text-center">
             <img
               src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp"
@@ -49,7 +51,7 @@ function Profile() {
               <a
                 href="#"
                 aria-label="dashboard"
-                className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-orange-600 to-orange-400"
+                className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-orange-600 to-orange-400 "
               >
                 <svg className="-ml-1 h-6 w-6" viewBox="0 0 24 24" fill="none">
                   <path
@@ -73,7 +75,7 @@ function Profile() {
             <li>
               <a
                 href="#"
-                className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+                className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -127,6 +129,15 @@ function Profile() {
               </a>
             </li>
           </ul>
+        </div>
+
+        <div className="md:hidden">
+          <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group" onClick={openSidebar}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+            <span>Show Sidebar</span>
+          </button>
         </div>
         <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
           <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">

@@ -28,7 +28,7 @@ const Events = () => {
     e.preventDefault();
 
     // Send a POST request with the data to your API endpoint
-    axios.post(' http://localhost:3001/posts', formData)
+    axios.post(' http://localhost:3004/posts', formData)
       .then((response) => {
         // Handle the success response here
         if (response.status === 201) {
@@ -55,16 +55,16 @@ const Events = () => {
 
 
   return (
-    <div className="h-full bg-[#FEFAF1]">
+    <div className="h-full ">
       <div className="mx-auto">
         <div className="flex justify-center px-6 py-12">
           <div className="w-full xl:w-3/4 lg:w-11/12 flex">
             <div className="w-full h-auto bg-gray-400 dark:bg-gray-800 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
               style={{ backgroundImage: "url('https://i.pinimg.com/564x/f4/7e/5c/f47e5c92b4f68e1e2cafd17d5b833b6f.jpg')" }}
             ></div>
-            <div className="w-full lg:w-7/12 bg-white    rounded-lg lg:rounded-l-none">
-            <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl">Create Your Event!</h2>
-            <form className="px-8 pt-6 pb-8 mb-4 bg-white text-start  rounded" onSubmit={handleSubmit}>
+            <div className="w-full lg:w-7/12    rounded-lg lg:rounded-l-none">
+            <h2 className="mb-4 text-center pt-12 left-1/2 font-serif text-3xl font-bold text-[#FE7A00] md:mb-6 md:text-4xl ">Create Your Event!</h2>
+            <form className="px-8 pt-6 pb-8 mb-4   text-start  rounded" onSubmit={handleSubmit}>
               <div className="mb-4">
                   <label className="block mb-2 text-sm font-bold text-gray-700 dark:text-black " htmlFor="Name  Events ">
                   Name  Event

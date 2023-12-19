@@ -29,7 +29,7 @@ function ProfilePrivate() {
     
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/Login`, {
+        const response = await axios.get(`http://localhost:3004/Login`, {
           headers: headers,
         });
         console.log("Response:", response.data);
@@ -132,7 +132,7 @@ function ProfilePrivate() {
       console.log(updatedUser);
       try {
         const response = await axios.put(
-          `http://localhost:3001/Login/1`,
+          `http://localhost:3004/Login/1`,
           updatedUser,
           {
             headers: headers,

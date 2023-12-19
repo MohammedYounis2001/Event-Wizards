@@ -18,7 +18,7 @@ const CategoryContent = () => {
   useEffect(() => {
     axios
       // .get("https://fakestoreapi.com/products")
-      .get(`http://localhost:3001/comments/${category}`)
+      .get(`http://localhost:3004/comments/${category}`)
       .then((response) => {
         setProducts(response.data);
         console.log(response.data);

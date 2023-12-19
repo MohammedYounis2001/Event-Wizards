@@ -6,7 +6,7 @@ function Dashbored() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/sale")
+      .get("http://localhost:3004/sale")
       .then((response) => {
         // Handle the response data here
         setProducts(response.data[0]);
@@ -21,11 +21,11 @@ function Dashbored() {
   console.log(products);
   return (
     <div className="flex flex-wrap justify-between  h-9 gap-x-4 gap-y-12 px-4 pt-1 pb-20 ">
-  <div className="flex w-72 ">
-    <div className="flex w-full max-w-full flex-col break-words rounded-lg border border-gray-100 bg-white text-gray-600 shadow-lg">
-      <div className="p-3 ">
-        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr  from-orange-700 to-orange-400 text-center text-white shadow-lg">
-          <svg
+    <div className="flex w-72 ">
+      <div className="flex w-full max-w-full flex-col break-words rounded-lg border border-gray-100 bg-white text-gray-600 shadow-lg">
+        <div className="p-3 ">
+          <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr from-orange-700 to-orange-400 text-center text-white shadow-lg">
+            <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mt-4 h-7 w-16"
             fill="none"
@@ -64,7 +64,7 @@ function Dashbored() {
   <div className="flex w-72">
     <div className="flex w-full max-w-full flex-col break-words rounded-lg border border-gray-100 bg-white text-gray-600 shadow-lg">
       <div className="p-3">
-        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr  from-orange-700 to-orange-400 text-center text-white shadow-lg">
+        <div className="absolute -mt-10 h-16 w-16 rounded-xl bg-gradient-to-tr from-orange-700 to-orange-400 text-center text-white shadow-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mt-4 h-7 w-16"

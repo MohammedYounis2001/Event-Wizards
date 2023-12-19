@@ -13,7 +13,7 @@ export const Ticket = () => {
   const [product, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/user/${id}`)
+      .get(`http://localhost:3004/user/${id}`)
       .then((response) => {
         // Handle the response data here
         setProducts(response.data);

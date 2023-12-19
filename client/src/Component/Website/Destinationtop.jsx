@@ -34,7 +34,7 @@ const PageContent = () => {
 // fetch products
 useEffect(() => {
   axios
-    .get(" http://localhost:3001/profile")
+    .get(" http://localhost:3004/profile")
     .then((response) => {
       // Handle the response data here
       setProducts(response.data);

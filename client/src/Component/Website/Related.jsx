@@ -9,7 +9,7 @@ const Related = (category) => {
   // fetch products
   useEffect(() => {
     axios
-      .get( "http://localhost:3001/comments")
+      .get( "http://localhost:3004/comments")
       .then((response) => {
         const allProducts = response.data;
         const chairsProducts = allProducts.filter(product => product.category === category);

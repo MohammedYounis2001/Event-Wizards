@@ -59,7 +59,7 @@ function SignUp() {
   const handleSignUp = async () => {
     if (validateForm()) {
       axios
-        .post("http://localhost:3001/posts", formData)
+        .post("http://localhost:3004/posts", formData)
         .then((response) => {
           navigate("/");
         })

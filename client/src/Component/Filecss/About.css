@@ -5,7 +5,7 @@
 .about-section{
     background: url('https://images.pexels.com/photos/301987/pexels-photo-301987.jpeg') no-repeat left;
     background-size: 55%;
-    background-color: #FEFAF1;
+    background-color: #fdfdfd;
     overflow: hidden;
     padding: 100px 0;
 }
@@ -13,7 +13,7 @@
 .inner-container{
     width: 55%;
     float: right;
-    background-color: #fdfdfd;
+    background-color: #FEFAF1;
     padding: 150px;
 }
 
